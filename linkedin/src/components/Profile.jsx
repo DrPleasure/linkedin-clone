@@ -10,7 +10,7 @@ import {
 import { MdPeopleAlt } from "react-icons/md";
 import { FiEdit2 } from "react-icons/fi";
 import { IoMdStats } from "react-icons/io";
-import Skillimage from "./components/Skillimage";
+// import Skillimage from "./components/Skillimage";
 const Profile = () => {
   return (
     <div className="App">
@@ -177,13 +177,13 @@ const Profile = () => {
                   <ul class="list-group">
                     <li class="list-group-item border-bottom transparent">
                       Bootsrap
-                      <Skillimage />
+                      {/* <Skillimage /> */}
                     </li>
                     <li class="list-group-item border-bottom transparent">
-                      JavaScript <Skillimage />
+                      {/* JavaScript <Skillimage /> */}
                     </li>
                     <li class="list-group-item border-bottom transparent">
-                      Bootstrap <Skillimage />
+                      {/* Bootstrap <Skillimage /> */}
                     </li>
                   </ul>
                   <Button className="btn transparent text-dark w-100">
