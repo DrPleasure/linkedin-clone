@@ -202,9 +202,9 @@ const Profile = () => {
                 </Col>
 
                 <Col xs={3} className="rounded">
-                  <Row className="bg-light text-dark rounded">
+                  <Row className="bg-light text-dark border solid  rounded">
                     <Col xs={12}>
-                      <p className="mt-2">
+                      <p className="mt-3">
                         Edit public profile & URL <AiOutlineQuestionCircle />
                       </p>
                     </Col>
@@ -214,6 +214,174 @@ const Profile = () => {
                         Add profile in another language{" "}
                         <AiOutlineQuestionCircle />
                       </p>
+                    </Col>
+                  </Row>
+                  <Row className="bg-light text-dark border solid  rounded mt-1">
+                    {" "}
+                    <Col xs={12} className="ml-2">
+                      <h5 className="pt-4 ">People you may know</h5>
+                    </Col>
+                    <Col xs={11} className="ml-2">
+                      <Row>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col xs={11} className="ml-2 border-top">
+                      <Row>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col xs={11} className="ml-2 border-top">
+                      <Row>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col xs={11} className="ml-2 border-top">
+                      <Row>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col xs={11} className="ml-2 border-top">
+                      <Row>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row className="bg-light text-dark border solid rounded mt-1">
+                    <Col xs={12} className="ml-2">
+                      <div className="pt-3">
+                        <img
+                          className="mr-2"
+                          style={{ width: "1rem" }}
+                          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                          alt="..."
+                        />
+                        <span style={{ fontSize: "0.7rem" }}>
+                          L E A R N I N G
+                        </span>
+                        <p className="pt-2">
+                          Add new skills with these courses, free for 24 hours
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={12} className="ml-2">
+                      <Row>
+                        <img
+                          className="mt-3"
+                          style={{ width: "3rem" }}
+                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                          alt="..."
+                        />
+                        <h6>Interpersonal Communication</h6>
+                      </Row>
+                      <hr />
+                    </Col>
+                    <Col xs={12} className="ml-2">
+                      <Row>
+                        <img
+                          className="mt-3"
+                          style={{ width: "3rem" }}
+                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                          alt="..."
+                        />
+                        <h6>Interpersonal Communication</h6>
+                      </Row>
+                      <hr />
+                    </Col>
+                    <Col xs={12} className="ml-2">
+                      <Row>
+                        <img
+                          className="mt-3"
+                          style={{ width: "3rem" }}
+                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                          alt="..."
+                        />
+                        <h6>Interpersonal Communication</h6>
+                      </Row>
+                      <hr />
+                    </Col>
+                    <Col xs={12} className="mb-2 d-flex justify-content-center">
+                      <h6 className="text-secondary">See my recommendations</h6>
                     </Col>
                   </Row>
                 </Col>

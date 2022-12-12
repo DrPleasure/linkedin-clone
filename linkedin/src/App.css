@@ -59,6 +59,7 @@
   max-width: 25px !important;
   margin: 0.5rem;
 }
+
 #navbar {
   width: 100% !important;
   background-color: white !important;
@@ -71,4 +72,10 @@
 }
 .custom-darker-bg {
   background-color: #e9e5df;
+}
+
+.rounded-img {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
