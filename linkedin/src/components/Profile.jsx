@@ -25,7 +25,8 @@ const Profile = () => {
                       <img
                         src="https://ultrawidewallpapers.com/wp-content/uploads/2016/08/shaded-forest-3440x1440.jpg"
                         className="w-100 rounded"
-                        id="wide-ratio" alt="forest"
+                        id="wide-ratio"
+                        alt="forest"
                       />
                       <div>
                         <img
@@ -36,7 +37,8 @@ const Profile = () => {
                             border: "solid #F8F9FA 5px",
                             objectFit: "cover",
                           }}
-                          className="super-rounded bottom-left" alt="blankprofile"
+                          className="super-rounded bottom-left"
+                          alt="blankprofile"
                         />
                       </div>
                       <div>
@@ -209,6 +211,7 @@ const Profile = () => {
                       <p className="mt-3">
                         Edit public profile & URL <AiOutlineQuestionCircle />
                       </p>
+                      <hr />
                     </Col>
 
                     <Col xs={12}>
@@ -350,14 +353,14 @@ text-muted"
                       <Row>
                         <Col xs={2}>
                           <img
-                            className="mt-3"
+                            className="mt-1"
                             style={{ width: "4rem" }}
                             src="https://previews.123rf.com/images/stocking/stocking1501/stocking150100381/35531587-business-people-talking.jpg"
                             alt="..."
                           />
                         </Col>
                         <Col xs={10}>
-                          <h6 className="ml-4 mt-3">
+                          <h6 className="ml-4 mt-1">
                             Interpersonal Communication
                           </h6>
                         </Col>
@@ -401,7 +404,10 @@ text-muted"
                       <hr />
                     </Col>
 
-                    <Col xs={12} className="mb-2 d-flex justify-content-center">
+                    <Col
+                      xs={12}
+                      className="mb-3  mt-2 d-flex justify-content-center"
+                    >
                       <h6 className="text-secondary">See my recommendations</h6>
                     </Col>
                   </Row>
