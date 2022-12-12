@@ -63,3 +63,12 @@
   width: 100% !important;
   background-color: white !important;
 }
+.smaller-text {
+  font-size: 14px !important;
+}
+.job-search-profile {
+  width: 85% !important;
+}
+.custom-darker-bg {
+  background-color: #e9e5df;
+}

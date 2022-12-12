@@ -34,6 +34,7 @@ export default function NavbarTop() {
               src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
               alt="logo"
               id="Navbarlogo"
+              style={{ width: "35px", height: "35px", objectFit: "cover" }}
             ></img>{" "}
           </Navbar.Brand>
           <Form className="d-flex">

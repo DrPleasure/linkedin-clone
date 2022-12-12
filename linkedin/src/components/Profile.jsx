@@ -75,12 +75,17 @@ const Profile = () => {
                             More
                           </Button>
                         </div>
-                        <div className="open-to-work m-4 bg-hald-dark text-dark p-2 rounded">
-                          <p>
-                            Open to work Junior Web Developer, Frontend
-                            Developer, Junior Developer and Junior Programmer
-                            roles See all details
-                          </p>
+                        <div className="d-flex justify-content-start job-search-profile">
+                          <div className="m-4 text-dark p-2 rounded custom-darker-bg">
+                            <p className="no-p-no-m">Open to work</p>
+                            <p className="no-p-no-m smaller-text">
+                              Junior Web Developer, Frontend Developer, Junior
+                              Developer and Junior Programmer roles
+                            </p>
+                            <a href="#" className="no-p-no-m smaller-text">
+                              See all details
+                            </a>
+                          </div>
                         </div>
                       </Col>
                     </Row>
