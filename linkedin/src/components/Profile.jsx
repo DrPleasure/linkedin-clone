@@ -29,10 +29,12 @@ const Profile = () => {
                       />
                       <div>
                         <img
-                          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                          src="https://images.squarespace-cdn.com/content/v1/61dcd32b3fb8bb4b5af9b560/2b94f334-db5a-4d1f-aa3d-e23f3a0cdb9f/podcasts-hosted-by-women.jpg"
                           style={{
                             width: "180px",
+                            height: "180px",
                             border: "solid #F8F9FA 5px",
+                            objectFit: "cover",
                           }}
                           className="super-rounded bottom-left"
                         />
@@ -45,7 +47,7 @@ const Profile = () => {
                       </div>
                     </div>
                     <Row>
-                      <Col className="mx-2 mt-5 text-dark">
+                      <Col className="mx-3 mt-5 text-dark">
                         <h2>Tim Afanasiev</h2>
                         <p> Junior Full Stack Web Developer</p>
                         <div className="d-flex">
@@ -76,7 +78,7 @@ const Profile = () => {
                           </Button>
                         </div>
                         <div className="d-flex justify-content-start job-search-profile">
-                          <div className="m-4 text-dark p-2 rounded custom-darker-bg">
+                          <div className="mt-3 ml-1 mb-3 text-dark p-2 rounded custom-darker-bg">
                             <p className="no-p-no-m">Open to work</p>
                             <p className="no-p-no-m smaller-text">
                               Junior Web Developer, Frontend Developer, Junior
@@ -90,7 +92,7 @@ const Profile = () => {
                       </Col>
                     </Row>
                   </div>
-                  <div className="mt-3 bg-light rounded p-2">
+                  <div className="mt-3 bg-light rounded p-3">
                     <h3>Analytics</h3>
                     <p className="text-muted align-items-center">
                       <AiFillEye /> Private to you
@@ -125,7 +127,7 @@ const Profile = () => {
                       </Col>
                     </Row>
                   </div>
-                  <div className="bg-light mt-3 rounded p-2">
+                  <div className="bg-light mt-3 rounded p-3">
                     <h4>About</h4>
                     <p className="text-truncate">
                       Hello, my name is Tim. I'm young and I love software
@@ -139,7 +141,7 @@ const Profile = () => {
                       future work opportunities!
                     </p>
                   </div>
-                  <div className="bg-light mt-3 rounded p-2">
+                  <div className="bg-light mt-3 rounded p-3">
                     <h4>Education</h4>
                     <ul class="list-group">
                       <li class="list-group-item border-bottom transparent">
@@ -181,7 +183,7 @@ const Profile = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="bg-light mt-3 rounded p-2">
+                  <div className="bg-light mt-3 rounded p-3">
                     <h4>Skills</h4>
                     <ul class="list-group">
                       <li class="list-group-item border-bottom transparent">
