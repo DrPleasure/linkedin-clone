@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Navbar, Nav, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import { BsGearFill } from "react-icons/bs";
 export default class MyFooter extends Component {
   render() {
     return (
@@ -14,101 +16,132 @@ export default class MyFooter extends Component {
               <div className="col-md-2 mx-auto">
                 {/* Links */}
                 <img
+                  className="mb-2"
                   style={{ width: "8rem" }}
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1024px-LinkedIn_2021.svg.png"
                   alt="..."
                 />
                 <ul className="list-unstyled">
-                  <li>
-                    <a href="#!" className="disabled">
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
                       About
                     </a>
                   </li>
-                  <li>
-                    <a href="#!">Community Guidelines</a>
-                  </li>
-                  <li>
-                    <a href="#!">Privacy & Terms</a>
-                  </li>
-                  <li>
-                    <a href="#!">Sales Solutions</a>
-                  </li>
-                  <li>
-                    <a href="#!">Safety Center</a>
-                  </li>
-                </ul>
-              </div>
-              {/* Grid column */}
-              <hr className="clearfix w-100 d-md-none" />
-              {/* Grid column */}
-              <div className="col-md-2 mx-auto">
-                {/* Links */}
-
-                <ul className="list-unstyled">
-                  <li>
-                    <a href="#!">Accessibility</a>
-                  </li>
-                  <li>
-                    <a href="#!">Careers</a>
-                  </li>
-                  <li>
-                    <a href="#!">Ad Choices</a>
-                  </li>
-                  <li>
-                    <a href="#!">Mobile</a>
-                  </li>
-                </ul>
-              </div>
-              {/* Grid column */}
-              <hr className="clearfix w-100 d-md-none" />
-              {/* Grid column */}
-              <div className="col-md-2 mx-auto">
-                {/* Links */}
-
-                <ul className="list-unstyled">
-                  <li>
-                    <a href="#!">Talent Solutions</a>
-                  </li>
-                  <li>
-                    <a href="#!">Marketing Solutions</a>
-                  </li>
-                  <li>
-                    <a href="#!">Advertising</a>
-                  </li>
-                  <li>
-                    <a href="#!">Small Business</a>
-                  </li>
-                </ul>
-              </div>
-              {/* Grid column */}
-              <hr className="clearfix w-100 d-md-none" />
-              {/* Grid column */}
-              <div className="col-md-2 mx-auto">
-                {/* Links */}
-
-                <ul className="list-unstyled">
-                  <li>
-                    <a href="#!">
-                      <h4>Questions?</h4>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Community Guidelines
                     </a>
-                    <p>Visit our Help Center</p>
+                  </li>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Privacy & Terms
+                    </a>
+                  </li>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Sales Solutions
+                    </a>
                   </li>
                   <li>
-                    <a href="#!" type="disabled">
-                      <h5>Manage your account in privacy</h5>
+                    <a href="#!" className="text-secondary">
+                      Safety Center
                     </a>
-                    <p>Go to your Settings</p>
                   </li>
                 </ul>
               </div>
+              {/* Grid column */}
               <hr className="clearfix w-100 d-md-none" />
               {/* Grid column */}
               <div className="col-md-2 mx-auto">
                 {/* Links */}
 
                 <ul className="list-unstyled">
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Accessibility
+                    </a>
+                  </li>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Careers
+                    </a>
+                  </li>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Ad Choices
+                    </a>
+                  </li>
                   <li>
-                    <label for="cars">Select Language</label>
+                    <a href="#!" className="text-secondary">
+                      Mobile
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {/* Grid column */}
+              <hr className="clearfix w-100 d-md-none" />
+              {/* Grid column */}
+              <div className="col-md-2 mx-auto">
+                {/* Links */}
+
+                <ul className="list-unstyled">
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Talent Solutions
+                    </a>
+                  </li>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Marketing Solutions
+                    </a>
+                  </li>
+                  <li className="mb-2">
+                    <a href="#!" className="text-secondary">
+                      Advertising
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-secondary">
+                      Small Business
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {/* Grid column */}
+              <hr className="clearfix w-100 d-md-none" />
+              {/* Grid column */}
+              <div className="col-md-3 mx-auto">
+                {/* Links */}
+
+                <ul className="list-unstyled">
+                  <li>
+                    <a href="#!" className="text-secondary">
+                      <h5>
+                        <AiFillQuestionCircle /> Questions?
+                      </h5>
+                    </a>
+                    <p className="ml-2 text-secondary">Visit our Help Center</p>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-secondary">
+                      <h5>
+                        <BsGearFill /> Manage your account in privacy
+                      </h5>
+                    </a>
+                    <p className="text-secondary">Go to your Settings</p>
+                  </li>
+                </ul>
+              </div>
+              <hr className="clearfix w-100 d-md-none" />
+              {/* Grid column */}
+              <div className="col-md-3 mx-auto">
+                {/* Links */}
+
+                <ul className="list-unstyled">
+                  <li>
+                    <label for="cars" className="text-secondary">
+                      Select Language
+                    </label>
                     <select style={{ width: "18rem" }} name="cars" id="cars">
                       <option value="eng">English(English)</option>
                       <option value="eng">English(English)</option>
@@ -146,7 +179,7 @@ export default class MyFooter extends Component {
           </div>
           {/* Footer Links */}
           {/* Copyright */}
-          <div className="footer-copyright text-start py-3">
+          <div className="footer-copyright text-start ml-3 py-3 text-secondary">
             LinkedIn Corporation © 2022
           </div>
           {/* Copyright */}
