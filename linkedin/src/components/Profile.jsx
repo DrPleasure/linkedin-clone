@@ -29,10 +29,12 @@ const Profile = () => {
                       />
                       <div>
                         <img
-                          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                          src="https://images.squarespace-cdn.com/content/v1/61dcd32b3fb8bb4b5af9b560/2b94f334-db5a-4d1f-aa3d-e23f3a0cdb9f/podcasts-hosted-by-women.jpg"
                           style={{
                             width: "180px",
+                            height: "180px",
                             border: "solid #F8F9FA 5px",
+                            objectFit: "cover",
                           }}
                           className="super-rounded bottom-left"
                         />
