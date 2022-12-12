@@ -350,7 +350,7 @@ text-muted"
                           <img
                             className="mt-3"
                             style={{ width: "4rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src="https://previews.123rf.com/images/stocking/stocking1501/stocking150100381/35531587-business-people-talking.jpg"
                             alt="..."
                           />
                         </Col>
@@ -368,13 +368,13 @@ text-muted"
                           <img
                             className="mt-3"
                             style={{ width: "4rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src="https://media.istockphoto.com/photos/man-speaking-at-a-business-conference-picture-id499517325?b=1&k=20&m=499517325&s=612x612&w=0&h=odO8tvEg9PAxaJqHDY-CbOq_j4YQ5qKthixyGZK3h5k="
                             alt="..."
                           />
                         </Col>
                         <Col xs={10}>
                           <h6 className="ml-4 mt-3">
-                            Interpersonal Communication
+                            Speaking Confidently and Effectively
                           </h6>
                         </Col>
                       </Row>
@@ -386,13 +386,13 @@ text-muted"
                           <img
                             className="mt-3"
                             style={{ width: "4rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src="https://media.istockphoto.com/id/1350926687/photo/happy-business-woman-using-digital-tablet-at-home.jpg?b=1&s=170667a&w=0&k=20&c=kfOJZExzHr5_-OK3AIKHWgoD_QLKnP_kVWDQwl6ZbEY="
                             alt="..."
                           />
                         </Col>
                         <Col xs={10}>
                           <h6 className="ml-4 mt-3">
-                            Interpersonal Communication
+                            Developing Your Emotional Intelligence
                           </h6>
                         </Col>
                       </Row>
