@@ -2,8 +2,12 @@ import React from 'react'
 import {Container, Row, Col, Button} from "react-bootstrap"
 
 export default function ScrollNavbar() {
+
+
+
+    
   return (
-    <div className='d-none'>
+    <div id="ScrollNavbar">
         <Container>
             <Row>
                <Col className='col-7'>
