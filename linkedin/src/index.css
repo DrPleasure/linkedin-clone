@@ -16,7 +16,9 @@ code {
 
 #NavbarTop {
   background-color: #FFFFFF;
-  color: rgba(102, 102, 102)
+  color: rgba(102, 102, 102);
+  border: 1 px solid grey;
+  height: 8vh;
 }
 
 #Navbarlogo {
