@@ -1,12 +1,12 @@
 body {
-  height: 100%;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: green;
+  background-color: #F3F2EE;
 }
 
 code {
@@ -19,8 +19,15 @@ code {
   color: rgba(102, 102, 102);
   border: 1 px solid grey;
   height: 8vh;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 #Navbarlogo {
   height: 20px;
+}
+
+#Trypremium {
+  color: #B09F89;
+  text-decoration: underline;
 }
