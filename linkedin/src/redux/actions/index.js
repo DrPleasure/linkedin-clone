@@ -12,7 +12,7 @@ export function setUser(payload) {
 }
 
 
-export const getUser = () => {
+export const getUserAction = () => {
 
 
 	return async (dispatch, getState) => {

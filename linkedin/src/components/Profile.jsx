@@ -25,7 +25,7 @@ const Profile = () => {
                       <img
                         src="https://ultrawidewallpapers.com/wp-content/uploads/2016/08/shaded-forest-3440x1440.jpg"
                         className="w-100 rounded"
-                        id="wide-ratio"
+                        id="wide-ratio" alt="forest"
                       />
                       <div>
                         <img
@@ -36,7 +36,7 @@ const Profile = () => {
                             border: "solid #F8F9FA 5px",
                             objectFit: "cover",
                           }}
-                          className="super-rounded bottom-left"
+                          className="super-rounded bottom-left" alt="blankprofile"
                         />
                       </div>
                       <div>
