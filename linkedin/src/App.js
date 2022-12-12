@@ -1,14 +1,20 @@
 
-import MyFooter from "./components/MyFooter";
-import NavbarTop from "./components/NavbarTop";
-import Profile from "./components/Profile";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProfilePage from "./components/ProfilePage";
+import NotFound from "./components/NotFound"
 function App() {
   return (
+       
     <div className="App">
-      <NavbarTop />
-      <Profile />
-      <MyFooter />
+      <BrowserRouter> 
+      <Routes>
+      <Route path="/" element={<ProfilePage />} />
+       <Route path="*" element={<NotFound />} /> 
+      </Routes>
+      </BrowserRouter>
     </div>
+   
+
   );
 }
 
