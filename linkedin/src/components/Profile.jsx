@@ -216,59 +216,109 @@ const Profile = () => {
                     <Col xs={12} className="ml-2">
                       <h5 className="pt-4 ">People you may know</h5>
                     </Col>
-                    <Col xs={12} className="ml-2">
+                    <Col xs={11} className="ml-2">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h5 className="pt-4 ">Name Lastname</h5>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
                       </Row>
                     </Col>
-                    <Col xs={12} className="ml-2">
+                    <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h5 className="pt-4 ">Name Lastname</h5>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
                       </Row>
                     </Col>
-                    <Col xs={12} className="ml-2">
+                    <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h5 className="pt-4 ">Name Lastname</h5>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
                       </Row>
                     </Col>
-                    <Col xs={12} className="ml-2">
+                    <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h5 className="pt-4 ">Name Lastname</h5>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
                       </Row>
                     </Col>
-                    <Col xs={12} className="ml-2">
+                    <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <img
-                          className="mt-3 mb-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h5 className="pt-4  ">Name Lastname</h5>
+                        <Col xs={2} className="mr-2">
+                          <img
+                            className=" mt-3 rounded-img"
+                            style={{ width: "3rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={8}>
+                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <p
+                            className="smaller-text
+text-muted"
+                          >
+                            some
+                          </p>
+                        </Col>
                       </Row>
                     </Col>
                   </Row>
