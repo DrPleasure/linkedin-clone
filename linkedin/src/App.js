@@ -1,6 +1,7 @@
+
 import MyFooter from "./components/MyFooter";
 import NavbarTop from "./components/NavbarTop";
-import Profile from "./components/Profile";
+import Profile from "./components/Profile"
 function App() {
   return (
     <div>
