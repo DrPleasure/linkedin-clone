@@ -70,7 +70,10 @@ export default class MyFooter extends Component {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="disabled">Terms Of Use</Nav.Link>
+                <Nav.Link className="disabled">
+                  <h2>Manage your account and privacy</h2>
+                  <p>Go to your Settings</p>
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link className="disabled">Corporate Information</Nav.Link>
