@@ -21,9 +21,9 @@ import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 
 export default function NavbarTop() {
-  const premiumurl =
-    "https://www.linkedin.com/premium/products/?upsellOrderOrigin=premium_nav_upsell_text&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F";
 
+
+  
   return (
     <div className=" sticky-top w-100 " id="navbar">
       <div className=" d-flex justify-content-center">
@@ -100,7 +100,6 @@ export default function NavbarTop() {
               <Nav.Link
                 id="Trypremium"
                 className="navbar-item"
-                activeClassName="is-active"
                 href="https://www.linkedin.com/premium/survey/?destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fin%2Folafglad%2F&upsellOrderOrigin=premium_nav_upsell_text"
               >
                 Try Premium for free
