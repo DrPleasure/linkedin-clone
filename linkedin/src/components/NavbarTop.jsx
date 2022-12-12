@@ -6,11 +6,11 @@ import {
   Form,
   FormControl,
   Button,
-  Container,
+  
 } from "react-bootstrap";
 import Divider from "@mui/material/Divider";
 import {
-  FaSearch,
+  
   FaHome,
   FaPeopleArrows,
   FaBriefcase,

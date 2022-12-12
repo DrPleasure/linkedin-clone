@@ -13,10 +13,13 @@ const NotFound = () => {
           <Button variant="info" onClick={() => navigate('/')}>
             Click here to go home
           </Button>
-          <img src='http://placekitten.com/200/300' alt="cat"/>
+        
         </Col>
        
       </Row>
+      <div>
+      <img src='http://placekitten.com/200/300' alt="cat"/>
+      </div>
       
     </Container>
   )
