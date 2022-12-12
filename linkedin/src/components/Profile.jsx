@@ -346,40 +346,59 @@ text-muted"
                     </Col>
                     <Col xs={12} className="ml-2">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h6>Interpersonal Communication</h6>
+                        <Col xs={2}>
+                          <img
+                            className="mt-3"
+                            style={{ width: "4rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={10}>
+                          <h6 className="ml-4 mt-3">
+                            Interpersonal Communication
+                          </h6>
+                        </Col>
                       </Row>
                       <hr />
                     </Col>
                     <Col xs={12} className="ml-2">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h6>Interpersonal Communication</h6>
+                        <Col xs={2}>
+                          <img
+                            className="mt-3"
+                            style={{ width: "4rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={10}>
+                          <h6 className="ml-4 mt-3">
+                            Interpersonal Communication
+                          </h6>
+                        </Col>
                       </Row>
                       <hr />
                     </Col>
                     <Col xs={12} className="ml-2">
                       <Row>
-                        <img
-                          className="mt-3"
-                          style={{ width: "3rem" }}
-                          src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-                          alt="..."
-                        />
-                        <h6>Interpersonal Communication</h6>
+                        <Col xs={2}>
+                          <img
+                            className="mt-3"
+                            style={{ width: "4rem" }}
+                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            alt="..."
+                          />
+                        </Col>
+                        <Col xs={10}>
+                          <h6 className="ml-4 mt-3">
+                            Interpersonal Communication
+                          </h6>
+                        </Col>
                       </Row>
                       <hr />
                     </Col>
+
                     <Col xs={12} className="mb-2 d-flex justify-content-center">
                       <h6 className="text-secondary">See my recommendations</h6>
                     </Col>
