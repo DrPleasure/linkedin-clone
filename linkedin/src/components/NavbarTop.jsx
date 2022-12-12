@@ -3,11 +3,15 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button} from "react-bootst
 import Divider from '@mui/material/Divider';
 import { FaSearch,  FaHome, FaPeopleArrows, FaBriefcase, FaRocketchat, FaBell } from "react-icons/fa"
 import { CgProfile} from "react-icons/cg"
+import { Link, NavLink } from 'react-router-dom';
 
 
 export default function NavbarTop() {
+
+const premiumurl = "https://www.linkedin.com/premium/products/?upsellOrderOrigin=premium_nav_upsell_text&destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F"
+
   return (
-    <Navbar id='NavbarTop' expand="lg">
+    <Navbar id='NavbarTop' expand="lg" sticky="top">
   <Navbar.Brand href="#"> <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo" id="Navbarlogo"></img> </Navbar.Brand>
   <Form className="d-flex">
   <FaSearch/>
@@ -18,6 +22,7 @@ export default function NavbarTop() {
         placeholder="Search"
         className="mr-2"
         aria-label="Search"
+        disabled
       />
     </Form>
   <Navbar.Toggle aria-controls="navbarScroll" />
@@ -57,7 +62,11 @@ export default function NavbarTop() {
       </NavDropdown>
       <Divider orientation="vertical" flexItem />
       <NavDropdown title="Work" href="#action5">Yeppah</NavDropdown>
-      <p id="Premium">Try Premium for free</p>
+
+      <Nav.Link id="Trypremium" className="navbar-item"
+    activeClassName="is-active" href="https://www.linkedin.com/premium/survey/?destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Fin%2Folafglad%2F&upsellOrderOrigin=premium_nav_upsell_text">
+      Try Premium for free</Nav.Link>
+
     </Nav>
    
   </Navbar.Collapse>
