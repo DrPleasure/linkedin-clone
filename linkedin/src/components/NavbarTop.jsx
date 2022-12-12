@@ -19,6 +19,7 @@ import {
 } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
+import ScrollNavbar from "./ScrollNavbar";
 
 export default function NavbarTop() {
 
@@ -109,6 +110,7 @@ export default function NavbarTop() {
           </Navbar.Collapse>
         </Navbar>
       </div>
+      <ScrollNavbar/>
     </div>
   );
 }

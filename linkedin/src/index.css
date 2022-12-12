@@ -28,3 +28,24 @@ code {
   color: #b09f89;
   text-decoration: underline;
 }
+
+#MoreButton {
+  font-weight: bold;
+  width: 20%;
+  border-radius: 20px;
+}
+
+#AddProfile {
+  color: blue;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  
+}
+
+
+
+#OpenToButton {
+  font-weight: bold;
+  border-radius: 20px;
+}
