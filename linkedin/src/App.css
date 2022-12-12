@@ -1,7 +1,58 @@
-
 #footing {
   font-size: 1rem;
 }
 #footing a:link {
   text-decoration: none;
+}
+#main-pic-profile {
+  padding-left: 0;
+  padding-right: 0;
+}
+#wide-ratio {
+  aspect-ratio: 32/9;
+  object-fit: cover;
+}
+#buttons-rounded {
+  border-radius: 20px;
+}
+.transparent {
+  background-color: transparent !important;
+}
+:root {
+  background-color: #ececec;
+}
+.App {
+  background-color: #ececec;
+}
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+.super-rounded {
+  border-radius: 50%;
+}
+.bottom-left {
+  position: absolute;
+  bottom: -35%;
+  left: 16px;
+}
+.no-p-no-m {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.bg-hald-dark {
+  background-color: #d4d4d2 !important;
+}
+.list-group-item {
+  border: none !important;
+}
+.mini-logos {
+  max-width: 25px !important;
+  margin: 0.5rem;
 }
