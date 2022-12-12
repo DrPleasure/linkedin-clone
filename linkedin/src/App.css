@@ -24,6 +24,9 @@
 .App {
   background-color: #ececec;
 }
+.bg-linkedin {
+  background-color: #ececec !important;
+}
 .image-container {
   position: relative;
   text-align: center;
@@ -55,4 +58,8 @@
 .mini-logos {
   max-width: 25px !important;
   margin: 0.5rem;
+}
+#navbar {
+  width: 100% !important;
+  background-color: white !important;
 }

@@ -1,9 +1,10 @@
 import MyFooter from "./components/MyFooter";
 import NavbarTop from "./components/NavbarTop";
 import Profile from "./components/Profile";
+import "./App.css";
 function App() {
   return (
-    <div>
+    <div className="App">
       <NavbarTop />
       <Profile />
       <MyFooter />
