@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
 import NotFound from "./components/NotFound"
 import Contact from "./components/Contact";
+import FilterUsers from "./components/FilterUsers";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<ProfilePage />} />
       <Route path="/contact" element={<Contact />} />
        <Route path="*" element={<NotFound />} /> 
+       <Route path="/users" element={<FilterUsers />} /> 
       </Routes>
       </BrowserRouter>
     </div>
