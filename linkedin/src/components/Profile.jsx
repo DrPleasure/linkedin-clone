@@ -13,7 +13,7 @@ import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import Experiences from "./Experiences";
 
 const Profile = () => {
   //harem
@@ -62,12 +62,12 @@ const Profile = () => {
                     </div>
                     <Row>
                       <Col className="mx-3 mt-5 text-dark">
-                        <h2>{user?.username}</h2>
-                        <p> Junior Full Stack Web Developer</p>
+                        <h2>
+                          {user?.name} {user?.surname}
+                        </h2>
+                        <p>{user?.title}</p>
                         <div className="d-flex">
-                          <p className="text-muted mr-2">
-                            Warsaw, Mazowieckie, Poland
-                          </p>
+                          <p className="text-muted mr-2">{user?.area}</p>
                           <a href="#">Contact info</a>
                         </div>
                         <a href="#">35 conntections</a>
@@ -143,18 +143,9 @@ const Profile = () => {
                   </div>
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>About</h4>
-                    <p className="text-truncate">
-                      Hello, my name is Tim. I'm young and I love software
-                      development. I speak multiple languages (English, Greek,
-                      Russian, and Polish) and like traveling. I'm passionate
-                      about programming, technology, and innovation. I learn
-                      fast and would like to join a dynamic and innovative team
-                      to develop my skills and deliver meaningful work. At the
-                      moment, I'm finishing EPICODE's Master Camp to become a
-                      Full- Stack Developer, but feel free to contact me for
-                      future work opportunities!
-                    </p>
+                    <p className="text-truncate">{user?.bio}</p>
                   </div>
+                  <Experiences />
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>Education</h4>
                     <ul class="list-group">
