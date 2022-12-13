@@ -1,6 +1,6 @@
 import "../App.css";
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { gettingUsers } from "../redux/actions/actionType";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import {
   AiOutlineQuestionCircle,
@@ -11,7 +11,17 @@ import { MdPeopleAlt } from "react-icons/md";
 import { FiEdit2 } from "react-icons/fi";
 import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 const Profile = () => {
+  //harem
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user.data); //i just want to go watch anime help me
+  useEffect(() => {
+    dispatch(gettingUsers());
+  }, []);
+  console.log(user);
   return (
     <>
       <div className="App pt-1 pb-3">
@@ -30,7 +40,7 @@ const Profile = () => {
                       />
                       <div>
                         <img
-                          src="https://images.squarespace-cdn.com/content/v1/61dcd32b3fb8bb4b5af9b560/2b94f334-db5a-4d1f-aa3d-e23f3a0cdb9f/podcasts-hosted-by-women.jpg"
+                          src={user?.image}
                           style={{
                             width: "180px",
                             height: "180px",
@@ -50,7 +60,7 @@ const Profile = () => {
                     </div>
                     <Row>
                       <Col className="mx-3 mt-5 text-dark">
-                        <h2>Tim Afanasiev</h2>
+                        <h2>{user?.name}</h2>
                         <p> Junior Full Stack Web Developer</p>
                         <div className="d-flex">
                           <p className="text-muted mr-2">
