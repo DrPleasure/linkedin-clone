@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Navbar,
   Nav,
@@ -6,11 +5,9 @@ import {
   Form,
   FormControl,
   Button,
-  
 } from "react-bootstrap";
 import Divider from "@mui/material/Divider";
 import {
-  
   FaHome,
   FaPeopleArrows,
   FaBriefcase,
@@ -20,11 +17,22 @@ import {
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 import ScrollNavbar from "./ScrollNavbar";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { setSearchAction } from "../redux/actions/actionType";
+import { fetchSearch } from "../redux/actions/actionType";
 
 export default function NavbarTop() {
+  const dispatch = useDispatch();
+  const searchData = useSelector((state) => state.search.searchData);
+  const searchValue = useSelector((state) => state.search.searchValue);
+  const handleSearch = (e) => {
+    dispatch(setSearchAction(e.target.value));
+  };
+  useEffect(() => {
+    dispatch(fetchSearch(searchValue));
+  }, [searchValue]);
 
-
-  
   return (
     <div className=" sticky-top w-100 " id="navbar">
       <div className=" d-flex justify-content-center">
@@ -46,7 +54,7 @@ export default function NavbarTop() {
               placeholder="Search"
               className="mr-2"
               aria-label="Search"
-              disabled
+              onChange={(e) => handleSearch(e)}
             />
           </Form>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -110,7 +118,7 @@ export default function NavbarTop() {
           </Navbar.Collapse>
         </Navbar>
       </div>
-      <ScrollNavbar/>
+      <ScrollNavbar />
     </div>
   );
 }
