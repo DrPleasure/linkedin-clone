@@ -13,11 +13,13 @@ import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+
 const Profile = () => {
   //harem
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.user.data); //i just want to go watch anime help me
+  const user = useSelector((state) => state.user.user); //i just want to go watch anime help me
   useEffect(() => {
     dispatch(gettingUsers());
   }, []);
@@ -60,7 +62,7 @@ const Profile = () => {
                     </div>
                     <Row>
                       <Col className="mx-3 mt-5 text-dark">
-                        <h2>{user?.name}</h2>
+                        <h2>{user?.username}</h2>
                         <p> Junior Full Stack Web Developer</p>
                         <div className="d-flex">
                           <p className="text-muted mr-2">
