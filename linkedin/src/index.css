@@ -69,3 +69,8 @@ code {
   opacity:1;
   left:0;
 }
+
+#avatar {
+  height: 25px;
+  border-radius: 50%;
+}

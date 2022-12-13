@@ -21,6 +21,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setSearchAction } from "../redux/actions/actionType";
 import { fetchSearch } from "../redux/actions/actionType";
+import { gettingUsers } from "../redux/actions/actionType";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+
 
 export default function NavbarTop() {
   const dispatch = useDispatch();
@@ -31,7 +37,13 @@ export default function NavbarTop() {
   };
   useEffect(() => {
     dispatch(fetchSearch(searchValue));
-  }, [searchValue]);
+  }, [searchValue]);  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user.user);
+  useEffect(() => {
+    dispatch(gettingUsers());
+  }, []);
+  console.log(user);
 
   return (
     <div className=" sticky-top w-100 " id="navbar">
@@ -80,7 +92,7 @@ export default function NavbarTop() {
                 <FaBell /> Notifications
               </Nav.Link>
               <div className="d-flex align-items-center">
-                <CgProfile />
+                 <img id="avatar" src={user.image}/>
                 <NavDropdown title="Me" id="navbarScrollingDropdown">
                   <NavDropdown.Item href="#action3">UserName</NavDropdown.Item>
                   <NavDropdown.Item href="#action4">
