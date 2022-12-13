@@ -82,3 +82,13 @@
 .text-smaller {
   font-size: 14px;
 }
+.hover {
+  transition: 0.3s;
+  padding: 0.3rem;
+}
+.hover:hover {
+  transition: 0.3s;
+  background-color: rgba(163, 163, 163, 0.384);
+  border-radius: 50%;
+  padding: 0.3rem;
+}
