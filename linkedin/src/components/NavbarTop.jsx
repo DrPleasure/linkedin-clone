@@ -47,13 +47,15 @@ export default function NavbarTop() {
       <div className=" d-flex justify-content-center">
         <Navbar id="NavbarTop" expand="lg">
           <Navbar.Brand href="#">
-            {" "}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-              alt="logo"
-              id="Navbarlogo"
-              style={{ width: "35px", height: "35px", objectFit: "cover" }}
-            ></img>{" "}
+            <a href="/home">
+              {" "}
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                alt="logo"
+                id="Navbarlogo"
+                style={{ width: "35px", height: "35px", objectFit: "cover" }}
+              ></img>{" "}
+            </a>
           </Navbar.Brand>
 
           <Searchbar />
