@@ -2,7 +2,7 @@ import { gettingExpOfUsers } from "../redux/actions/actionType";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import { Modal, InputGroup, Form } from "react-bootstrap";
 import { useState } from "react";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 
@@ -34,12 +34,96 @@ const Experiences = () => {
                   />
                 </div>
                 <div>
-                  <p className="no-p-no-m">{experiences[0]?.company}</p>
-                  <p className="no-p-no-m text-muted">{experiences[0]?.role}</p>
-                  <p className="no-p-no-m text-muted text-smaller">
-                    {experiences[0]?.description}
-                  </p>
-                  <p className="no-p-no-m text-muted">Sep 2022 - Now</p>
+                  <div class="form-group row mb-1">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">
+                      Company:
+                    </label>
+                    <div class="col-sm-9">
+                      <InputGroup
+                        type="text"
+                        readonly
+                        class="form-control-plaintext"
+                        value="email@example.com"
+                      >
+                        <Form.Control
+                          placeholder="Search"
+                          value={experiences[0]?.company}
+                        />
+                      </InputGroup>
+                    </div>
+                  </div>
+                  <div class="form-group row mb-1">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">
+                      Position:
+                    </label>
+                    <div class="col-sm-9">
+                      <InputGroup
+                        type="text"
+                        readonly
+                        class="form-control-plaintext"
+                        value="email@example.com"
+                      >
+                        <Form.Control
+                          placeholder="Search"
+                          value={experiences[0]?.role}
+                        />
+                      </InputGroup>
+                    </div>
+                  </div>
+                  <div class="form-group row mb-1">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">
+                      Description:
+                    </label>
+                    <div class="col-sm-9">
+                      <InputGroup
+                        type="text"
+                        readonly
+                        class="form-control-plaintext"
+                        value="email@example.com"
+                      >
+                        <Form.Control
+                          placeholder="Search"
+                          value={experiences[0]?.description}
+                        />
+                      </InputGroup>
+                    </div>
+                  </div>
+                  <div class="form-group row mb-1">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">
+                      Start:
+                    </label>
+                    <div class="col-sm-9">
+                      <InputGroup
+                        type="text"
+                        readonly
+                        class="form-control-plaintext"
+                        value="email@example.com"
+                      >
+                        <Form.Control
+                          placeholder="Search"
+                          value={experiences[0]?.startDate}
+                        />
+                      </InputGroup>
+                    </div>
+                  </div>
+                  <div class="form-group row mb-1">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">
+                      End:
+                    </label>
+                    <div class="col-sm-9">
+                      <InputGroup
+                        type="text"
+                        readonly
+                        class="form-control-plaintext"
+                        value="email@example.com"
+                      >
+                        <Form.Control
+                          placeholder="Search"
+                          value={experiences[0]?.updatedAt}
+                        />
+                      </InputGroup>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
