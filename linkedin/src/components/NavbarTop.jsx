@@ -19,7 +19,7 @@ import { Link, NavLink } from "react-router-dom";
 import ScrollNavbar from "./ScrollNavbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-
+import { gettingAllUsers } from "../redux/actions/actionType";
 import { gettingUsers } from "../redux/actions/actionType";
 
 export default function NavbarTop() {
@@ -28,6 +28,11 @@ export default function NavbarTop() {
     setQuery(e.target.value);
   };
   const dispatch = useDispatch();
+  const users = useSelector((state) => state.user.users);
+  useEffect(() => {
+    dispatch(gettingAllUsers());
+  }, []);
+  console.log(users);
 
   const user = useSelector((state) => state.user.user);
   useEffect(() => {
@@ -60,6 +65,7 @@ export default function NavbarTop() {
               onChange={(e) => handleChange(e)}
             />
           </Form>
+          <p> {users[0].name}</p>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
