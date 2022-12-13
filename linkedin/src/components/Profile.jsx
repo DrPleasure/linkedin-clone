@@ -1,6 +1,6 @@
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { gettingUsers } from "../redux/actions/actionType";
+import { gettingUsers, gettingAllUsers } from "../redux/actions/actionType";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import {
   AiOutlineQuestionCircle,
@@ -24,6 +24,12 @@ const Profile = () => {
     dispatch(gettingUsers());
   }, []);
   console.log(user);
+  //
+  const users = useSelector((state) => state.user.users); //i just want to go watch anime help me
+  useEffect(() => {
+    dispatch(gettingAllUsers());
+  }, []);
+  console.log(users);
   return (
     <>
       <div className="App pt-1 pb-3">
