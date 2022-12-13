@@ -18,29 +18,22 @@ import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 import ScrollNavbar from "./ScrollNavbar";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { setSearchAction } from "../redux/actions/actionType";
-import { fetchSearch } from "../redux/actions/actionType";
+import { useEffect, useState } from "react";
+
 import { gettingUsers } from "../redux/actions/actionType";
 
-
-
 export default function NavbarTop() {
-  const dispatch = useDispatch();
-  const searchData = useSelector((state) => state.search.searchData);
-  const searchValue = useSelector((state) => state.search.searchValue);
-  const handleSearch = (e) => {
-    dispatch(setSearchAction(e.target.value));
+  const [query, setQuery] = useState("");
+  const handleChange = (e) => {
+    setQuery(e.target.value);
   };
-  useEffect(() => {
-    dispatch(fetchSearch(searchValue));
-  }, [searchValue]);  
+  const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user.user);
   useEffect(() => {
     dispatch(gettingUsers());
+    console.log(query);
   }, []);
-  console.log(user);
 
   return (
     <div className=" sticky-top w-100 " id="navbar">
@@ -63,7 +56,8 @@ export default function NavbarTop() {
               placeholder="Search"
               className="mr-2"
               aria-label="Search"
-              onChange={(e) => handleSearch(e)}
+              value={query}
+              onChange={(e) => handleChange(e)}
             />
           </Form>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -89,7 +83,7 @@ export default function NavbarTop() {
                 <FaBell /> Notifications
               </Nav.Link>
               <div className="d-flex align-items-center">
-                 <img id="avatar" src={user.image}/>
+                <img id="avatar" src={user.image} />
                 <NavDropdown title="Me" id="navbarScrollingDropdown">
                   <NavDropdown.Item href="#action3">UserName</NavDropdown.Item>
                   <NavDropdown.Item href="#action4">
