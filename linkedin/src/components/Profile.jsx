@@ -1,6 +1,10 @@
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { gettingUsers, gettingAllUsers } from "../redux/actions/actionType";
+import {
+  gettingUsers,
+  gettingAllUsers,
+  gettingExpOfUsers,
+} from "../redux/actions/actionType";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import {
   AiOutlineQuestionCircle,
@@ -13,23 +17,25 @@ import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Experiences from "./Experiences";
+import Experiences from "./Experiences"; //component
 
 const Profile = () => {
   //harem
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.user.user); //i just want to go watch anime help me
+  const user = useSelector((state) => state.user.user);
   useEffect(() => {
     dispatch(gettingUsers());
   }, []);
   console.log(user);
   //
-  const users = useSelector((state) => state.user.users); //i just want to go watch anime help me
+
+  const users = useSelector((state) => state.user.users);
   useEffect(() => {
     dispatch(gettingAllUsers());
   }, []);
   console.log(users);
+
   return (
     <>
       <div className="App pt-1 pb-3">
@@ -150,8 +156,10 @@ const Profile = () => {
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>About</h4>
                     <p className="text-truncate">{user?.bio}</p>
+                    <p className="no-p-no-m">{user?.experiences?.company}</p>
                   </div>
                   <Experiences />
+
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>Education</h4>
                     <ul class="list-group">
@@ -237,11 +245,11 @@ const Profile = () => {
                     </Col>
                     <Col xs={11} className="ml-2">
                       <Row>
-                        <Col xs={2} className="mr-2">
+                        <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src={users[0]?.image}
                             alt="..."
                           />
                         </Col>
@@ -249,20 +257,20 @@ const Profile = () => {
                           <h6 className="pt-4 no-p-no-m ">{users[0]?.name}</h6>
                           <p
                             className="smaller-text
-text-muted"
+text-muted text-truncate"
                           >
-                            some
+                            {users[0]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <Col xs={2} className="mr-2">
+                        <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src={users[1]?.image}
                             alt="..."
                           />
                         </Col>
@@ -270,72 +278,72 @@ text-muted"
                           <h6 className="pt-4 no-p-no-m ">{users[1]?.name}</h6>
                           <p
                             className="smaller-text
-text-muted"
+text-muted text-truncate"
                           >
-                            some
+                            {users[1]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <Col xs={2} className="mr-2">
+                        <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src={users[2]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[2]?.name}</h6>
                           <p
                             className="smaller-text
-text-muted"
+text-muted text-truncate"
                           >
-                            some
+                            {users[2]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <Col xs={2} className="mr-2">
+                        <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src={users[3]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[3]?.name}</h6>
                           <p
-                            className="smaller-text
+                            className="smaller-text text-truncate
 text-muted"
                           >
-                            some
+                            {users[3]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
                       <Row>
-                        <Col xs={2} className="mr-2">
+                        <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+                            src={users[4]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[4]?.name}</h6>
                           <p
-                            className="smaller-text
+                            className="smaller-text text-truncate
 text-muted"
                           >
-                            some
+                            {users[4]?.bio}
                           </p>
                         </Col>
                       </Row>
