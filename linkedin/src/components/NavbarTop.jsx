@@ -22,6 +22,7 @@ import { useEffect, useState } from "react";
 import { gettingAllUsers } from "../redux/actions/actionType";
 import { gettingUsers } from "../redux/actions/actionType";
 import { User } from "./User";
+import Searchbar from "./Searchbar";
 
 export default function NavbarTop() {
   const [query, setQuery] = useState("");
@@ -54,18 +55,8 @@ export default function NavbarTop() {
               style={{ width: "35px", height: "35px", objectFit: "cover" }}
             ></img>{" "}
           </Navbar.Brand>
-          <Form className="d-flex">
-            {/* <FaSearch /> */}
-            <FormControl
-              type="search"
-              bg="grey"
-              placeholder="Search"
-              className="mr-2"
-              aria-label="Search"
-              value={query}
-              onChange={(e) => handleChange(e)}
-            />
-          </Form>
+
+          <Searchbar />
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
