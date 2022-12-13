@@ -3,7 +3,8 @@ export const SET_LOADING_STATUS = "SET_LOADING_STATUS";
 export const GET_ARTICLES = "GET_ARTICLES";
 export const GET_USER = "GET_USER";
 export const GET_ALL_USERS = "GET_ALL_USERS";
-
+export const SET_SEARCH = "SET_SEARCH";
+export const FETCH_SEARCH = "FETCH_SEARCH";
 export const gettingUsers = () => {
   const options = {
     method: "GET",
@@ -68,3 +69,30 @@ export const gettingAllUsers = () => {
   };
 };
 //right
+
+export const setSearchAction = (searchquery) => {
+  return {
+    type: SET_SEARCH,
+    payload: searchquery,
+  };
+};
+export const fetchSearch = (value) => {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+    },
+  };
+  return async (dispatch, getState) => {
+    const resp = await fetch(
+      `https://striveschool-api.herokuapp.com/api/profile/${value}`,
+      options
+    );
+    const fetchedData = await resp.json();
+    dispatch({
+      type: FETCH_SEARCH,
+      payload: fetchedData,
+    });
+  };
+};
