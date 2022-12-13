@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { gettingAllUsers } from "../redux/actions/actionType";
 import { gettingUsers } from "../redux/actions/actionType";
+import { User } from "./User";
 
 export default function NavbarTop() {
   const [query, setQuery] = useState("");
@@ -65,7 +66,7 @@ export default function NavbarTop() {
               onChange={(e) => handleChange(e)}
             />
           </Form>
-          <p> {users[0].name}</p>
+
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
