@@ -246,7 +246,7 @@ const Profile = () => {
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[0]?.name}</h6>
                           <p
                             className="smaller-text
 text-muted"
@@ -267,7 +267,7 @@ text-muted"
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">Name Lastname</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[1]?.name}</h6>
                           <p
                             className="smaller-text
 text-muted"
