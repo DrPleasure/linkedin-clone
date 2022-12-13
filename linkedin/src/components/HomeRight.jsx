@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { useEffect } from "react";
 import { gettingAllUsers } from "../redux/actions/actionType";
 import { useDispatch } from "react-redux";
+import { FiArrowRight } from "react-icons/fi";
+
 export default function HomeRight() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.user.users);
@@ -18,7 +20,7 @@ export default function HomeRight() {
         style={{ backgroundColor: "white", borderRadius: "5px" }}
         className="mt-3"
       >
-        <div className="pt-2 ml-3">
+        <div className="pt-3 ml-4">
           <h5>Add your feed</h5>
         </div>
         <Col xs={11} className="ml-2">
@@ -27,18 +29,23 @@ export default function HomeRight() {
               <img
                 className=" mt-3 rounded-img"
                 style={{ width: "3rem" }}
-                src={users[0]?.image}
+                src={users[5]?.image}
                 alt="..."
               />
             </Col>
             <Col xs={8}>
-              <h6 className="pt-4 no-p-no-m ">{users[0]?.name}</h6>
+              <h6 className="pt-4 no-p-no-m ">{users[5]?.name}</h6>
               <p
                 className="smaller-text
 text-muted text-truncate"
               >
-                {users[0]?.bio}
+                {users[5]?.bio}
               </p>
+            </Col>
+            <Col className="d-flex justify-content-center">
+              <Button type="button" className="btn-connect btn-secondary mb-3">
+                Follow
+              </Button>
             </Col>
           </Row>
         </Col>
@@ -48,18 +55,23 @@ text-muted text-truncate"
               <img
                 className=" mt-3 rounded-img"
                 style={{ width: "3rem" }}
-                src={users[0]?.image}
+                src={users[6]?.image}
                 alt="..."
               />
             </Col>
             <Col xs={8}>
-              <h6 className="pt-4 no-p-no-m ">{users[0]?.name}</h6>
+              <h6 className="pt-4 no-p-no-m ">{users[6]?.name}</h6>
               <p
                 className="smaller-text
 text-muted text-truncate"
               >
-                {users[0]?.bio}
+                {users[6]?.bio}
               </p>
+            </Col>
+            <Col className="d-flex justify-content-center">
+              <Button type="button" className="btn-connect btn-secondary mb-3">
+                Follow
+              </Button>
             </Col>
           </Row>
         </Col>
@@ -69,23 +81,34 @@ text-muted text-truncate"
               <img
                 className=" mt-3 rounded-img"
                 style={{ width: "3rem" }}
-                src={users[0]?.image}
+                src={users[7]?.image}
                 alt="..."
               />
             </Col>
             <Col xs={8}>
-              <h6 className="pt-4 no-p-no-m ">{users[0]?.name}</h6>
+              <h6 className="pt-4 no-p-no-m ">{users[7]?.name}</h6>
               <p
                 className="smaller-text
 text-muted text-truncate"
               >
-                {users[0]?.bio}
+                {users[7]?.bio}
               </p>
+            </Col>
+
+            <Col className="d-flex justify-content-center">
+              <Button type="button" className="btn-connect btn-secondary mb-3">
+                Follow
+              </Button>
             </Col>
           </Row>
         </Col>
-        <div className="ml-3 mt-4 pb-3">
-          <p>View all recommendations </p>
+        <hr style={{ width: "90%" }} />
+        <div id="recommend" className="ml-3 mt-4 pb-2 px-3">
+          <a href="/#">
+            <p>
+              View all recommendations <FiArrowRight />{" "}
+            </p>
+          </a>
         </div>
       </div>
       <div id="side-footer" className="text-center mt-3">
@@ -117,7 +140,7 @@ text-muted text-truncate"
           </Col>
           <Col xs={12} className="d-flex flex-row mt-3 justify-content-center">
             <img
-              src="./Images/logo2.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1024px-LinkedIn_2021.svg.png"
               className="mr-2"
               id="linkedin-logo"
               alt="Linked img"

@@ -92,3 +92,38 @@
   border-radius: 50%;
   padding: 0.3rem;
 }
+#side-footer {
+  position: relative;
+  width: 250px;
+}
+.right__side__footer {
+  margin-left: 35px;
+}
+#right-sidebar .card-footer {
+  background: none;
+  border: none;
+}
+#right-sidebar .card-footer > p {
+  color: #868686;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+#side-footer a {
+  color: #868686;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+#side-footer p {
+  color: #434343;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+#side-footer #linkedin-logo {
+  height: 14px;
+}
+.lilogo {
+  width: 40px;
+}
+#recommend a {
+  color: #434343;
+}
