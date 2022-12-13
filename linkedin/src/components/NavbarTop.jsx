@@ -33,7 +33,7 @@ export default function NavbarTop() {
   useEffect(() => {
     dispatch(gettingUsers());
     console.log(query);
-  }, []);
+  }, [query]);
 
   return (
     <div className=" sticky-top w-100 " id="navbar">
