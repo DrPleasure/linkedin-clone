@@ -22,9 +22,6 @@ import { useEffect } from "react";
 import { setSearchAction } from "../redux/actions/actionType";
 import { fetchSearch } from "../redux/actions/actionType";
 import { gettingUsers } from "../redux/actions/actionType";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 
 
 
@@ -37,7 +34,7 @@ export default function NavbarTop() {
   };
   useEffect(() => {
     dispatch(fetchSearch(searchValue));
-  }, [searchValue]);  const dispatch = useDispatch();
+  }, [searchValue]);  
 
   const user = useSelector((state) => state.user.user);
   useEffect(() => {
