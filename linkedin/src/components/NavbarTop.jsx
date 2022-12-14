@@ -22,9 +22,33 @@ import { Link, NavLink } from "react-router-dom";
 import ScrollNavbar from "./ScrollNavbar";
 
 export default function NavbarTop() {
+<<<<<<< Updated upstream
+=======
 
 
+
+  const [query, setQuery] = useState("");
+  console.log("The query is ", query)
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.user.users);
+  useEffect(() => {
+    dispatch(gettingAllUsers());
+  }, []);
+  console.log(users);
+>>>>>>> Stashed changes
+
+
+<<<<<<< Updated upstream
   
+=======
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
+>>>>>>> Stashed changes
   return (
     <div className=" sticky-top w-100 " id="navbar">
       <div className=" d-flex justify-content-center">
@@ -38,7 +62,7 @@ export default function NavbarTop() {
               style={{ width: "35px", height: "35px", objectFit: "cover" }}
             ></img>{" "}
           </Navbar.Brand>
-          <Form className="d-flex">
+          <Form onSubmit={handleSubmit} className="d-flex">
             {/* <FaSearch /> */}
             <FormControl
               type="search"
@@ -46,7 +70,12 @@ export default function NavbarTop() {
               placeholder="Search"
               className="mr-2"
               aria-label="Search"
+<<<<<<< Updated upstream
               disabled
+=======
+              value={query}
+              onChange= {handleChange}
+>>>>>>> Stashed changes
             />
           </Form>
           <Navbar.Toggle aria-controls="navbarScroll" />
