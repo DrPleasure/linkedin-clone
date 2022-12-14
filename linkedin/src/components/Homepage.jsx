@@ -5,6 +5,7 @@ import HomeMiddle from "./HomeMiddle";
 import HomeRight from "./HomeRight";
 import NavbarTop from "./NavbarTop";
 import Messenger from "./Messenger";
+
 export default function Homepage() {
   return (
     <>

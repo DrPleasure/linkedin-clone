@@ -12,7 +12,6 @@ const Experiences = () => {
   useEffect(() => {
     dispatch(gettingExpOfUsers());
   }, []);
-  console.log(experiences);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

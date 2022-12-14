@@ -52,7 +52,7 @@ function Searchbar({ user }) {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+
         setData(data);
       } else {
         console.log("Error fetching data");

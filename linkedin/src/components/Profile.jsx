@@ -27,14 +27,11 @@ const Profile = () => {
   useEffect(() => {
     dispatch(gettingUsers());
   }, []);
-  console.log(user);
-  //
 
   const users = useSelector((state) => state.user.users);
   useEffect(() => {
     dispatch(gettingAllUsers());
   }, []);
-  console.log(users);
 
   return (
     <>
@@ -156,7 +153,6 @@ const Profile = () => {
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>About</h4>
                     <p className="text-truncate">{user?.bio}</p>
-                    <p className="no-p-no-m">{user?.experiences?.company}</p>
                   </div>
                   <Experiences />
 

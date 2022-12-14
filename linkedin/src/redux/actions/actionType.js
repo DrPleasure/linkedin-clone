@@ -3,8 +3,8 @@ export const SET_LOADING_STATUS = "SET_LOADING_STATUS";
 export const GET_ARTICLES = "GET_ARTICLES";
 export const GET_USER = "GET_USER";
 export const GET_ALL_USERS = "GET_ALL_USERS";
-
 export const GET_EXPERIENCES = "GET_EXPERIENCES";
+export const GET_POSTS = "GET_POSTS";
 
 export const gettingUsers = () => {
   const options = {
@@ -23,7 +23,6 @@ export const gettingUsers = () => {
       );
       if (response.ok) {
         const response_two = await response.json();
-        console.log(response_two);
 
         dispatch({
           type: GET_USER, //god save us all
@@ -55,7 +54,6 @@ export const gettingAllUsers = () => {
       );
       if (response.ok) {
         const response_three = await response.json();
-        console.log(response_three);
 
         dispatch({
           type: GET_ALL_USERS, //god save us all
@@ -87,11 +85,42 @@ export const gettingExpOfUsers = () => {
       );
       if (response.ok) {
         const response_exp = await response.json();
-        console.log(response_exp);
 
         dispatch({
           type: GET_EXPERIENCES, //god save us all
           payload: response_exp,
+        });
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+//fourth fetch
+export const gettingAllPosts = () => {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+    },
+  };
+
+  return async (dispatch) => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/",
+        options
+      );
+      if (response.ok) {
+        const response_posts = await response.json();
+        console.log(response_posts);
+
+        dispatch({
+          type: GET_POSTS, //god save us all
+          payload: response_posts,
         });
       } else {
         console.log("error");
