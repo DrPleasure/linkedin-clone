@@ -23,7 +23,6 @@ import { gettingAllUsers } from "../redux/actions/actionType";
 import { gettingUsers } from "../redux/actions/actionType";
 import { User } from "./User";
 import Searchbar from "./Searchbar";
-
 export default function NavbarTop() {
   const [query, setQuery] = useState("");
   const handleChange = (e) => {
@@ -85,12 +84,18 @@ export default function NavbarTop() {
               <div className="d-flex align-items-center">
                 <img id="avatar" src={user.image} />
                 <NavDropdown title="Me" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">UserName</NavDropdown.Item>
+                  <Link to="/">
+                    <NavDropdown.Item href="#action3">
+                      {user?.name} {user?.surname}
+                    </NavDropdown.Item>
+                  </Link>
                   <NavDropdown.Item href="#action4">
                     Description
                   </NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">
+                    View Profile
+                  </NavDropdown.Item>
 
-                  <Button>View Profile</Button>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action5">Account</NavDropdown.Item>
                   <NavDropdown.Item href="#action5">

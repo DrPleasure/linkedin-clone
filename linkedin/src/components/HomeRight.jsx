@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { gettingAllUsers } from "../redux/actions/actionType";
 import { useDispatch } from "react-redux";
 import { FiArrowRight } from "react-icons/fi";
+import { AiOutlinePlus } from "react-icons/ai";
+import { BsInfoLg } from "react-icons/bs";
 
 export default function HomeRight() {
   const dispatch = useDispatch();
@@ -20,14 +22,17 @@ export default function HomeRight() {
         style={{ backgroundColor: "white", borderRadius: "5px" }}
         className="mt-3"
       >
-        <div className="pt-3 ml-4">
-          <h5>Add your feed</h5>
+        <div className="pt-2 ml-2 mr-2 d-flex justify-content-between align-items-center">
+          <h6 className="text-smaller font-weight-bold">Add your feed</h6>
+          <h6>
+            <BsInfoLg />
+          </h6>
         </div>
         <Col xs={11} className="ml-2">
           <Row>
-            <Col xs={2} className="mr-3">
+            <Col xs={2} className="mr-3 d-flex align-items-center">
               <img
-                className=" mt-3 rounded-img"
+                className="mt-3 rounded-img"
                 style={{ width: "3rem" }}
                 src={users[5]?.image}
                 alt="..."
@@ -37,13 +42,18 @@ export default function HomeRight() {
               <h6 className="pt-4 no-p-no-m ">{users[5]?.name}</h6>
               <p
                 className="smaller-text
-text-muted text-truncate"
+text-muted text-truncate no-p-no-m mb-1"
               >
                 {users[5]?.bio}
               </p>
             </Col>
             <Col className="d-flex justify-content-center">
-              <Button type="button" className="btn-connect btn-secondary mb-3">
+              <Button
+                type="button"
+                className="btn-connect btn-secondary text-dark transparent d-flex align-items-center"
+                id="buttons-rounded"
+              >
+                <AiOutlinePlus className="mr-1 p-0" />
                 Follow
               </Button>
             </Col>
@@ -51,9 +61,9 @@ text-muted text-truncate"
         </Col>
         <Col xs={11} className="ml-2">
           <Row>
-            <Col xs={2} className="mr-3">
+            <Col xs={2} className="mr-3 d-flex align-items-center">
               <img
-                className=" mt-3 rounded-img"
+                className="mt-3 rounded-img"
                 style={{ width: "3rem" }}
                 src={users[6]?.image}
                 alt="..."
@@ -63,13 +73,18 @@ text-muted text-truncate"
               <h6 className="pt-4 no-p-no-m ">{users[6]?.name}</h6>
               <p
                 className="smaller-text
-text-muted text-truncate"
+text-muted text-truncate no-p-no-m mb-1"
               >
                 {users[6]?.bio}
               </p>
             </Col>
             <Col className="d-flex justify-content-center">
-              <Button type="button" className="btn-connect btn-secondary mb-3">
+              <Button
+                type="button"
+                className="btn-connect btn-secondary text-dark transparent d-flex align-items-center"
+                id="buttons-rounded"
+              >
+                <AiOutlinePlus className="mr-1 p-0" />
                 Follow
               </Button>
             </Col>
@@ -77,9 +92,9 @@ text-muted text-truncate"
         </Col>
         <Col xs={11} className="ml-2">
           <Row>
-            <Col xs={2} className="mr-3">
+            <Col xs={2} className="mr-3 d-flex align-items-center">
               <img
-                className=" mt-3 rounded-img"
+                className="mt-3 rounded-img"
                 style={{ width: "3rem" }}
                 src={users[7]?.image}
                 alt="..."
@@ -89,24 +104,28 @@ text-muted text-truncate"
               <h6 className="pt-4 no-p-no-m ">{users[7]?.name}</h6>
               <p
                 className="smaller-text
-text-muted text-truncate"
+text-muted text-truncate no-p-no-m mb-1"
               >
                 {users[7]?.bio}
               </p>
             </Col>
-
             <Col className="d-flex justify-content-center">
-              <Button type="button" className="btn-connect btn-secondary mb-3">
+              <Button
+                type="button"
+                className="btn-connect btn-secondary text-dark transparent d-flex align-items-center"
+                id="buttons-rounded"
+              >
+                <AiOutlinePlus className="mr-1 p-0" />
                 Follow
               </Button>
             </Col>
           </Row>
         </Col>
-        <hr style={{ width: "90%" }} />
-        <div id="recommend" className="ml-3 mt-4 pb-2 px-3">
+
+        <div id="recommend" className="ml-3 mt-4 pb-1">
           <a href="/#">
             <p>
-              View all recommendations <FiArrowRight />{" "}
+              View all recommendations <FiArrowRight />
             </p>
           </a>
         </div>
