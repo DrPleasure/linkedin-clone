@@ -42,16 +42,8 @@ const Experiences = () => {
                       Company:
                     </label>
                     <div class="col-sm-9">
-                      <InputGroup
-                        type="text"
-                        readonly
-                        class="form-control-plaintext"
-                        value="email@example.com"
-                      >
-                        <Form.Control
-                          placeholder="Search"
-                          value={experiences[0]?.company}
-                        />
+                      <InputGroup type="text" class="form-control-plaintext">
+                        <Form.Control placeholder={experiences[0]?.company} />
                       </InputGroup>
                     </div>
                   </div>
@@ -62,14 +54,10 @@ const Experiences = () => {
                     <div class="col-sm-9">
                       <InputGroup
                         type="text"
-                        readonly
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control
-                          placeholder="Search"
-                          value={experiences[0]?.role}
-                        />
+                        <Form.Control placeholder={experiences[0]?.role} />
                       </InputGroup>
                     </div>
                   </div>
@@ -80,13 +68,11 @@ const Experiences = () => {
                     <div class="col-sm-9">
                       <InputGroup
                         type="text"
-                        readonly
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
                         <Form.Control
-                          placeholder="Search"
-                          value={experiences[0]?.description}
+                          placeholder={experiences[0]?.description}
                         />
                       </InputGroup>
                     </div>
@@ -98,14 +84,10 @@ const Experiences = () => {
                     <div class="col-sm-9">
                       <InputGroup
                         type="text"
-                        readonly
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control
-                          placeholder="Search"
-                          value={experiences[0]?.startDate}
-                        />
+                        <Form.Control placeholder="{experiences[0]?.startDate}" />
                       </InputGroup>
                     </div>
                   </div>
@@ -116,14 +98,10 @@ const Experiences = () => {
                     <div class="col-sm-9">
                       <InputGroup
                         type="text"
-                        readonly
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control
-                          placeholder="Search"
-                          value={experiences[0]?.updatedAt}
-                        />
+                        <Form.Control placeholder={experiences[0]?.updatedAt} />
                       </InputGroup>
                     </div>
                   </div>
