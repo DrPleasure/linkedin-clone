@@ -82,7 +82,9 @@ export default function NavbarTop() {
                 <FaBell /> Notifications
               </Nav.Link>
               <div className="d-flex align-items-center">
-                <img id="avatar" src={user.image} />
+                <a href="/profile">
+                  <img id="avatar" src={user.image} />
+                </a>
                 <NavDropdown title="Me" id="navbarScrollingDropdown">
                   <Link to="/profile">
                     <NavDropdown.Item href="#action3">
