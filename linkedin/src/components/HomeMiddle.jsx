@@ -1,6 +1,6 @@
 import { borderLeft, borderRadius } from "@mui/system";
-import React from "react";
-import { Form, InputGroup, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, InputGroup, Row, Col, Button, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { MdPhotoSizeSelectActual } from "react-icons/md";
 import { BsFillPlayBtnFill } from "react-icons/bs";
@@ -10,11 +10,18 @@ import { blue } from "@mui/material/colors";
 import { useDispatch } from "react-redux";
 import { gettingAllPosts } from "../redux/actions/actionType";
 import { useEffect } from "react";
+
 import Post from "./Post";
+
 export default function HomeMiddle() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const posts = useSelector((state) => state.user.posts);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   useEffect(() => {
     dispatch(gettingAllPosts());
   }, []);
@@ -29,6 +36,29 @@ export default function HomeMiddle() {
         }}
         className="mt-3"
       >
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add a new post!</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <div className="mt-3 ml-1">
+              <InputGroup type="text">
+                <Form.Control
+                  style={{ width: "22vw", borderRadius: "15px" }}
+                  placeholder="type here to post"
+                />
+              </InputGroup>
+            </div>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary">Post</Button>
+          </Modal.Footer>
+        </Modal>
         <div className="d-flex justify-content-center align-items-center">
           <Row className="d-flex justify-content-center align-items-center">
             <div className="mt-3">
@@ -48,10 +78,10 @@ export default function HomeMiddle() {
               </a>
             </div>
             <div className="mt-3 ml-1">
-              <InputGroup type="text">
+              <InputGroup type="text" onClick={handleShow}>
                 <Form.Control
                   style={{ width: "22vw", borderRadius: "15px" }}
-                  placeholder="type here to post bullshit"
+                  placeholder="type here to post"
                 />
               </InputGroup>
             </div>
