@@ -2,12 +2,18 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Form, InputGroup, ListGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Searchbar({ user }) {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [query, setQuery] = useState("");
+
+  let { userId } = useParams();
+  console.log(useParams)
+
+
 
   useEffect(() => {
     fetchData();
