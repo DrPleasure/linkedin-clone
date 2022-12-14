@@ -46,7 +46,7 @@ export default function NavbarTop() {
       <div className=" d-flex justify-content-center">
         <Navbar id="NavbarTop" expand="lg">
           <Navbar.Brand href="#">
-            <Link to="/home">
+            <Link to="/">
               {" "}
               <img
                 src="https://cdn-icons-png.flaticon.com/512/174/174857.png"

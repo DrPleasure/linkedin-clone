@@ -5,13 +5,15 @@ import Contact from "./components/Contact";
 import FilterUsers from "./components/FilterUsers";
 import Homepage from "./components/Homepage";
 
+
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/:userid" element={<ProfilePage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/users" element={<FilterUsers />} />
