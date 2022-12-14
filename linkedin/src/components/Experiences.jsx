@@ -2,11 +2,12 @@ import { gettingExpOfUsers } from "../redux/actions/actionType";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
-import { Modal, InputGroup, Form } from "react-bootstrap";
+import { Modal, InputGroup, Form, Col } from "react-bootstrap";
 import { useState } from "react";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 const Experiences = () => {
+  const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const experiences = useSelector((state) => state.user.experiences);
   useEffect(() => {
@@ -21,7 +22,7 @@ const Experiences = () => {
   const handleNoAdd = () => setAdd(false);
   const submitChanges = async () => {
     const experienceInformation = {
-      //   _id: user._id,
+      // _id: user._id,
       role: document.querySelector("#role").value,
       company: document.querySelector("#company").value,
       startDate: document.querySelector("#startDate").value,
@@ -40,7 +41,7 @@ const Experiences = () => {
       },
     };
     try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${experiences._id}/experiences`;
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`;
       const response = await fetch(endpoint, options);
       if (response.ok) {
         alert("User information is updated successfully");
@@ -50,7 +51,7 @@ const Experiences = () => {
     } catch (error) {
       console.log(error);
     }
-    dispatch(gettingExpOfUsers(experiences._id));
+    dispatch(gettingExpOfUsers(user._id));
     handleClose();
   };
 
@@ -122,7 +123,7 @@ const Experiences = () => {
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control placeholder="{experiences[0]?.startDate}" />
+                        <Form.Control placeholder={experiences[0]?.startDate} />
                       </InputGroup>
                     </div>
                   </div>
@@ -287,14 +288,19 @@ const Experiences = () => {
                   className="mini-logos"
                 />
               </div>
-              <div>
-                <p className="no-p-no-m">{experiences[0]?.company}</p>
-                <p className="no-p-no-m text-muted">{experiences[0]?.role}</p>
-                <p className="no-p-no-m text-muted text-smaller">
-                  {experiences[0]?.description}
-                </p>
-                <p className="no-p-no-m text-muted">Sep 2022 - Now</p>
-              </div>
+
+              {experiences.map((experiences, i) => (
+                <Col>
+                  <div>
+                    <p className="no-p-no-m">{experiences?.company}</p>
+                    <p className="no-p-no-m text-muted">{experiences?.role}</p>
+                    <p className="no-p-no-m text-muted text-smaller">
+                      {experiences?.description}
+                    </p>
+                    <p className="no-p-no-m text-muted">Sep 2022 - Now</p>
+                  </div>
+                </Col>
+              ))}
             </div>
           </li>
         </ul>
