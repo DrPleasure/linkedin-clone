@@ -84,7 +84,7 @@ export default function NavbarTop() {
               <div className="d-flex align-items-center">
                 <img id="avatar" src={user.image} />
                 <NavDropdown title="Me" id="navbarScrollingDropdown">
-                  <Link to="/">
+                  <Link to="/profile">
                     <NavDropdown.Item href="#action3">
                       {user?.name} {user?.surname}
                     </NavDropdown.Item>
@@ -92,9 +92,8 @@ export default function NavbarTop() {
                   <NavDropdown.Item href="#action4">
                     Description
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    View Profile
-                  </NavDropdown.Item>
+
+                  <NavDropdown.Item>View Profile</NavDropdown.Item>
 
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action5">Account</NavDropdown.Item>
