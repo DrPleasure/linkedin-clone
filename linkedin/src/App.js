@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Homepage />} />
-          <Route path="/" element={<ProfilePage />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/users" element={<FilterUsers />} />

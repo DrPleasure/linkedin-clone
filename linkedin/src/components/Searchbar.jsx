@@ -92,7 +92,7 @@ function Searchbar({ user }) {
                       setQuery("");
                       setFilteredData([]);
                     }}
-                    to={"/"}
+                    to={"/Profile"}
                   >
                     <ListGroup.Item
                       style={{
