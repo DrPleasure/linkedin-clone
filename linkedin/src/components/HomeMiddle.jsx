@@ -92,11 +92,16 @@ export default function HomeMiddle() {
           </div>
         </Row>
       </div>
-      {/* <h1>{posts[0].user.name}</h1>               works well          */}
+      <Row className="d-flex align-items-center">
+        <Col xs={10}>
+          <hr className="w-100 bg-secondary" />
+        </Col>
+        <Col xs={2} className="d-flex text-extra-small">
+          <p className="text-muted m-0 p-0">Sort by: </p>&nbsp;
+          <p className="p-0 m-0"> Top</p>
+        </Col>
+      </Row>
 
-      {/* {items.map((obj) => (
-        <User key={obj.id} {...obj} /> //if all the names match (Local variables = API, then we can just use {...obj} instead of declaring each prop like first_name={first_name} etc)
-      ))} */}
       {posts.slice(0, 50).map((post) => (
         <Post
           key={post.id}

@@ -82,6 +82,9 @@
 .text-smaller {
   font-size: 14px;
 }
+.text-extra-small {
+  font-size: 12px;
+}
 .hover {
   transition: 0.3s;
   padding: 0.3rem;
