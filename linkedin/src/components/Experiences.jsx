@@ -19,8 +19,44 @@ const Experiences = () => {
   const handleShow = () => setShow(true);
   const handleAdd = () => setAdd(true);
   const handleNoAdd = () => setAdd(false);
+  const submitChanges = async () => {
+    const experienceInformation = {
+      //   _id: user._id,
+      role: document.querySelector("#role").value,
+      company: document.querySelector("#company").value,
+      startDate: document.querySelector("#startDate").value,
+      endDate: document.querySelector("#endDate").value,
+      description: document.querySelector("#description").value,
+      area: document.querySelector("#area").value,
+    };
+    console.log(experienceInformation);
+    const options = {
+      method: "POST",
+      body: JSON.stringify(experienceInformation),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${experiences._id}/experiences`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert("User information is updated successfully");
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    dispatch(gettingExpOfUsers(experiences._id));
+    handleClose();
+  };
+
   return (
     <>
+      {/*First modal */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit your Experiences</Modal.Title>
@@ -141,6 +177,7 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="company"
                       >
                         <Form.Control placeholder="Add company name" />
                       </InputGroup>
@@ -155,6 +192,7 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="role"
                       >
                         <Form.Control placeholder="Add position in company" />
                       </InputGroup>
@@ -169,6 +207,7 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="description"
                       >
                         <Form.Control placeholder="Small description" />
                       </InputGroup>
@@ -183,6 +222,7 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="startDate"
                       >
                         <Form.Control placeholder="Add time of work start" />
                       </InputGroup>
@@ -197,6 +237,7 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="endDate"
                       >
                         <Form.Control placeholder="Add time u ended work " />
                       </InputGroup>
@@ -215,7 +256,11 @@ const Experiences = () => {
           >
             Close
           </Button>
-          <Button variant="primary" onClick={handleNoAdd} id="buttons-rounded">
+          <Button
+            variant="primary"
+            onClick={submitChanges}
+            id="buttons-rounded"
+          >
             Add
           </Button>
         </Modal.Footer>
