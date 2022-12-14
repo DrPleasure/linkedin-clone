@@ -41,7 +41,7 @@ const Experiences = () => {
       },
     };
     try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`;
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}}/experiences`;
       const response = await fetch(endpoint, options);
       if (response.ok) {
         alert("User information is updated successfully");
@@ -160,109 +160,53 @@ const Experiences = () => {
         </Modal.Footer>
       </Modal>
       {/* 2nd Modal */}
-      <Modal show={add} onHide={handleAdd}>
-        <Modal.Header closeButton onClick={handleNoAdd}>
-          <Modal.Title>Add new experiences: </Modal.Title>
+      <i className="bi bi-plus-lg " onClick={handleShow}></i>
+
+      <Modal show={add} onHide={handleNoAdd}>
+        <Modal.Header>
+          <Modal.Title>Add Personal Experience</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ul class="list-group">
-            <li class="list-group-item border-bottom transparent">
-              <div className="d-flex align-items-start">
-                <div>
-                  <div class="form-group row mb-1">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">
-                      Company:
-                    </label>
-                    <div class="col-sm-9">
-                      <InputGroup
-                        type="text"
-                        class="form-control-plaintext"
-                        value="email@example.com"
-                        id="company"
-                      >
-                        <Form.Control placeholder="Add company name" />
-                      </InputGroup>
-                    </div>
-                  </div>
-                  <div class="form-group row mb-1">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">
-                      Position:
-                    </label>
-                    <div class="col-sm-9">
-                      <InputGroup
-                        type="text"
-                        class="form-control-plaintext"
-                        value="email@example.com"
-                        id="role"
-                      >
-                        <Form.Control placeholder="Add position in company" />
-                      </InputGroup>
-                    </div>
-                  </div>
-                  <div class="form-group row mb-1">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">
-                      Description:
-                    </label>
-                    <div class="col-sm-9">
-                      <InputGroup
-                        type="text"
-                        class="form-control-plaintext"
-                        value="email@example.com"
-                        id="description"
-                      >
-                        <Form.Control placeholder="Small description" />
-                      </InputGroup>
-                    </div>
-                  </div>
-                  <div class="form-group row mb-1">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">
-                      Start:
-                    </label>
-                    <div class="col-sm-9">
-                      <InputGroup
-                        type="text"
-                        class="form-control-plaintext"
-                        value="email@example.com"
-                        id="startDate"
-                      >
-                        <Form.Control placeholder="Add time of work start" />
-                      </InputGroup>
-                    </div>
-                  </div>
-                  <div class="form-group row mb-1">
-                    <label for="staticEmail" class="col-sm-3 col-form-label">
-                      End:
-                    </label>
-                    <div class="col-sm-9">
-                      <InputGroup
-                        type="text"
-                        class="form-control-plaintext"
-                        value="email@example.com"
-                        id="endDate"
-                      >
-                        <Form.Control placeholder="Add time u ended work " />
-                      </InputGroup>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <p id="required">* Required field</p>
+          <Form>
+            <Form.Group controlId="role">
+              <Form.Label>Role*</Form.Label>
+              <Form.Control type="text" placeholder="Enter Role" />
+            </Form.Group>
+            <Form.Group controlId="company">
+              <Form.Label>Company*</Form.Label>
+              <Form.Control type="text" placeholder="Enter Company Name" />
+            </Form.Group>
+            <Form.Group controlId="area">
+              <Form.Label>Area*</Form.Label>
+              <Form.Control type="text" placeholder="Enter City of Work" />
+            </Form.Group>
+            <Form.Group controlId="startDate">
+              <Form.Label>Start Date*</Form.Label>
+              <Form.Control type="date" placeholder="Enter your new position" />
+            </Form.Group>
+            <Form.Group controlId="endDate">
+              <Form.Label>End Date</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder="Enter your city of residence"
+              />
+            </Form.Group>
+            <Form.Group controlId="description">
+              <Form.Label>Description*</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your Job Experience"
+              />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="secondary"
-            onClick={handleNoAdd}
-            id="buttons-rounded"
-          >
+          <Button variant="secondary" onClick={handleNoAdd}>
             Close
           </Button>
-          <Button
-            variant="primary"
-            onClick={submitChanges}
-            id="buttons-rounded"
-          >
-            Add
+          <Button variant="primary" type="submit" onClick={submitChanges}>
+            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
