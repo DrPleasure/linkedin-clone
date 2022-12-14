@@ -46,7 +46,7 @@ export default function NavbarTop() {
       <div className=" d-flex justify-content-center">
         <Navbar id="NavbarTop" expand="lg">
           <Navbar.Brand href="#">
-            <a href="/home">
+            <Link to="/home">
               {" "}
               <img
                 src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
@@ -54,7 +54,7 @@ export default function NavbarTop() {
                 id="Navbarlogo"
                 style={{ width: "35px", height: "35px", objectFit: "cover" }}
               ></img>{" "}
-            </a>
+            </Link>
           </Navbar.Brand>
 
           <Searchbar />
@@ -66,19 +66,19 @@ export default function NavbarTop() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">
+              <Nav.Link>
                 <FaHome /> Home
               </Nav.Link>
-              <Nav.Link href="#action2">
+              <Nav.Link>
                 <FaPeopleArrows /> My Network
               </Nav.Link>
-              <Nav.Link href="#action2">
+              <Nav.Link>
                 <FaBriefcase /> Jobs
               </Nav.Link>
-              <Nav.Link href="#action2">
+              <Nav.Link>
                 <FaRocketchat /> Messaging
               </Nav.Link>
-              <Nav.Link href="#action2">
+              <Nav.Link>
                 <FaBell /> Notifications
               </Nav.Link>
               <div className="d-flex align-items-center">
