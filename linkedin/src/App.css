@@ -127,3 +127,16 @@
 #recommend a {
   color: #434343;
 }
+#messenger {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 1rem;
+}
+#messaging {
+  width: 12rem;
+}
+.imgmessenger {
+  border-radius: 50%;
+  max-height: 30px;
+}

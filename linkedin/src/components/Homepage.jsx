@@ -4,7 +4,7 @@ import HomeLeft from "./HomeLeft";
 import HomeMiddle from "./HomeMiddle";
 import HomeRight from "./HomeRight";
 import NavbarTop from "./NavbarTop";
-
+import Messenger from "./Messenger";
 export default function Homepage() {
   return (
     <>
@@ -22,6 +22,9 @@ export default function Homepage() {
           </Col>
         </Row>
       </Container>
+      <div id="messenger">
+        <Messenger />
+      </div>
     </>
   );
 }
