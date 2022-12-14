@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-const Post = ({ id, email, name, surname, image, text, title }) => {
+const Post = ({ id, email, name, surname, image, text, title, i }) => {
   return (
     <div className="bg-light rounded mt-2 p-2">
       <Row>
@@ -30,7 +30,7 @@ const Post = ({ id, email, name, surname, image, text, title }) => {
       </Row>
       <Row>
         <Col xs={12}>
-          <img src="https://picsum.photos/1000?blur" className="w-100" />
+          <img src={"https://picsum.photos/100" + i} className="w-100" />
         </Col>
       </Row>
     </div>

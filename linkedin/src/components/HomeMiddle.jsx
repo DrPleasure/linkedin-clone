@@ -102,7 +102,7 @@ export default function HomeMiddle() {
         </Col>
       </Row>
 
-      {posts.slice(0, 50).map((post) => (
+      {posts.slice(0, 50).map((post, i) => (
         <Post
           key={post.id}
           image={post?.user.image}
@@ -111,6 +111,7 @@ export default function HomeMiddle() {
           name={post?.user?.name}
           surname={post?.user?.surname}
           title={post?.user.title}
+          i={i}
         />
       ))}
     </>
