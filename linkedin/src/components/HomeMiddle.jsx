@@ -132,7 +132,7 @@ export default function HomeMiddle() {
         </Col>
       </Row>
 
-      {posts.slice(0, 10).map((post, i) => (
+      {posts.slice(320, 330).map((post, i) => (
         <Post
           key={post.id}
           image={post?.user.image}
