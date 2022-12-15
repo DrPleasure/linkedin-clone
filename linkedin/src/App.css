@@ -1,38 +1,148 @@
+#footing {
+  font-size: 1rem;
+}
+#footing a:link {
+  text-decoration: none;
+}
+#main-pic-profile {
+  padding-left: 0;
+  padding-right: 0;
+}
+#wide-ratio {
+  aspect-ratio: 32/9;
+  object-fit: cover;
+}
+#buttons-rounded {
+  border-radius: 20px;
+}
+.transparent {
+  background-color: transparent !important;
+}
+:root {
+  background-color: #ececec;
+}
 .App {
+  background-color: #ececec;
+}
+.bg-linkedin {
+  background-color: #ececec !important;
+}
+.image-container {
+  position: relative;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+.super-rounded {
+  border-radius: 50%;
+}
+.bottom-left {
+  position: absolute;
+  bottom: -35%;
+  left: 16px;
+}
+.no-p-no-m {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.bg-hald-dark {
+  background-color: #d4d4d2 !important;
+}
+.list-group-item {
+  border: none !important;
+}
+.mini-logos {
+  max-width: 25px !important;
+  margin: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#navbar {
+  width: 100% !important;
+  background-color: white !important;
+}
+.smaller-text {
+  font-size: 14px !important;
+}
+.job-search-profile {
+  width: 85% !important;
+}
+.custom-darker-bg {
+  background-color: #e9e5df;
+}
+
+.rounded-img {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.text-smaller {
+  font-size: 14px;
+}
+.text-extra-small {
+  font-size: 12px;
+}
+.hover {
+  transition: 0.3s;
+  padding: 0.3rem;
+}
+.hover:hover {
+  transition: 0.3s;
+  background-color: rgba(163, 163, 163, 0.384);
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+#side-footer {
+  position: relative;
+  width: 250px;
+}
+.right__side__footer {
+  margin-left: 35px;
+}
+#right-sidebar .card-footer {
+  background: none;
+  border: none;
+}
+#right-sidebar .card-footer > p {
+  color: #868686;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+#side-footer a {
+  color: #868686;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+#side-footer p {
+  color: #434343;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+#side-footer #linkedin-logo {
+  height: 14px;
+}
+.lilogo {
+  width: 40px;
+}
+#recommend a {
+  color: #434343;
+}
+#messenger {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 1rem;
+}
+#messaging {
+  width: 12rem;
+}
+.imgmessenger {
+  border-radius: 50%;
+  max-height: 30px;
+}
+#dates {
+  max-width: 5rem;
 }
