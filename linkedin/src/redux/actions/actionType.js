@@ -33,8 +33,8 @@ export const getOtherProfile = (userid) => {
       } else {
         console.log("error");
       }
-    } catch (erro) {
-      console.log("woohs nothing is found");
+    } catch (error) {
+      console.log("woops nothing here");
     }
   };
 };
