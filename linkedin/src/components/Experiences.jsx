@@ -41,7 +41,7 @@ const Experiences = () => {
       },
     };
     try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}}/experiences`;
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences`;
       const response = await fetch(endpoint, options);
       if (response.ok) {
         alert("User information is updated successfully");
