@@ -5,6 +5,63 @@ export const GET_USER = "GET_USER";
 export const GET_ALL_USERS = "GET_ALL_USERS";
 export const GET_EXPERIENCES = "GET_EXPERIENCES";
 export const GET_POSTS = "GET_POSTS";
+export const GET_EXPERIENCE_DETAILS_OTHER = "GET_EXPERIENCE_DETAILS_OTHER"
+export const OTHER_USER_DETAILS = "OTHER_USER_DETAILS"
+
+const options = {
+  method: "GET",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+  },
+};
+
+export const getOtherProfile = (userid) => {
+  return async (dispatch, getState) => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/" + userid,
+        options
+      );
+      if (response.ok) {
+        const fetchedData = await response.json();
+        console.log(fetchedData);
+        dispatch({
+          type: OTHER_USER_DETAILS,
+          payload: fetchedData,
+        });
+      } else {
+        console.log("error");
+      }
+    } catch (erro) {
+      console.log("woohs nothing is found");
+    }
+  };
+};
+
+export const getExperienceOtherAction = (userid) => {
+  return async (dispatch, getState) => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/" +
+          userid +
+          "/experiences/",
+        options
+      );
+      if (response.ok) {
+        let fetchedData = await response.json();
+        dispatch({
+          type: GET_EXPERIENCE_DETAILS_OTHER,
+          payload: fetchedData,
+        });
+      } else {
+        console.log("error fetching experiences");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export const gettingUsers = () => {
   const options = {
@@ -14,6 +71,7 @@ export const gettingUsers = () => {
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
     },
   };
+
 
   return async (dispatch) => {
     try {
