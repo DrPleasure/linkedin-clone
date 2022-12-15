@@ -68,7 +68,7 @@ export const gettingAllUsers = () => {
   };
 };
 //third fetch
-export const gettingExpOfUsers = () => {
+export const gettingExpOfUsers = (user) => {
   const options = {
     method: "GET",
     headers: {
@@ -80,7 +80,7 @@ export const gettingExpOfUsers = () => {
   return async (dispatch) => {
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/5fc4af0bb708c200175de88e/experiences",
+        `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences`,
         options
       );
       if (response.ok) {

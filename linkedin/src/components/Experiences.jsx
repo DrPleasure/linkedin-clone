@@ -11,7 +11,7 @@ const Experiences = () => {
   const dispatch = useDispatch();
   const experiences = useSelector((state) => state.user.experiences);
   useEffect(() => {
-    dispatch(gettingExpOfUsers());
+    dispatch(gettingExpOfUsers(user));
   }, []);
 
   const [show, setShow] = useState(false);
@@ -160,7 +160,6 @@ const Experiences = () => {
         </Modal.Footer>
       </Modal>
       {/* 2nd Modal */}
-      <i className="bi bi-plus-lg " onClick={handleShow}></i>
 
       <Modal show={add} onHide={handleNoAdd}>
         <Modal.Header>
