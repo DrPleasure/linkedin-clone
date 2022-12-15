@@ -60,7 +60,64 @@ const Experiences = () => {
     handleShow();
     console.log(fuck);
   };
-
+  //--------------------------------------------------------------------------------------------------------------------------------------------------------
+  const deleteExperience = async () => {
+    const options = {
+      method: "DELETE",
+      body: JSON.stringify(),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences/${fuck._id}`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert("Exp deleted successfully, you fuck");
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    dispatch(gettingExpOfUsers(user._id));
+  };
+  //--------------------------------------------------------------------------------------------------------------------------------------------------------
+  const updateExperience = async () => {
+    const experienceInformation2 = {
+      // _id: user._id,
+      role: document.querySelector("#role2").value,
+      company: document.querySelector("#company2").value,
+      startDate: document.querySelector("#startDate2").value,
+      endDate: document.querySelector("#endDate2").value,
+      description: document.querySelector("#description2").value,
+    };
+    console.log(experienceInformation2);
+    const options = {
+      method: "PUT",
+      body: JSON.stringify(experienceInformation2),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences/${fuck._id}`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert("Exp edited successfully, you cock");
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    dispatch(gettingExpOfUsers(user._id));
+  };
+  //------------------
   return (
     <>
       {/*First modal */}
@@ -84,12 +141,16 @@ const Experiences = () => {
                       Company:
                     </label>
                     <div class="col-sm-9">
-                      <InputGroup type="text" class="form-control-plaintext">
+                      <Form.Group
+                        type="text"
+                        class="form-control-plaintext"
+                        controlId="company2"
+                      >
                         <Form.Control
                           placeholder={experiences[0]?.company}
                           defaultValue={fuck.company}
                         />
-                      </InputGroup>
+                      </Form.Group>
                     </div>
                   </div>
                   <div class="form-group row mb-1">
@@ -100,7 +161,7 @@ const Experiences = () => {
                       <InputGroup
                         type="text"
                         class="form-control-plaintext"
-                        value="email@example.com"
+                        id="role2"
                       >
                         <Form.Control
                           placeholder={experiences?.role}
@@ -118,8 +179,12 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         defaultValue={fuck.description}
+                        id="description2"
                       >
-                        <Form.Control placeholder={experiences?.description} />
+                        <Form.Control
+                          placeholder={experiences?.description}
+                          defaultValue={fuck.description}
+                        />
                       </InputGroup>
                     </div>
                   </div>
@@ -132,8 +197,12 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="startDate2"
                       >
-                        <Form.Control placeholder={experiences?.startDate} />
+                        <Form.Control
+                          placeholder={experiences?.startDate}
+                          defaultValue={fuck.startDate}
+                        />
                       </InputGroup>
                     </div>
                   </div>
@@ -146,8 +215,12 @@ const Experiences = () => {
                         type="text"
                         class="form-control-plaintext"
                         value="email@example.com"
+                        id="endDate2"
                       >
-                        <Form.Control placeholder={experiences?.updatedAt} />
+                        <Form.Control
+                          placeholder={experiences?.updatedAt}
+                          defaultValue={fuck.updatedAt}
+                        />
                       </InputGroup>
                     </div>
                   </div>
@@ -157,11 +230,19 @@ const Experiences = () => {
           </ul>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleClose} id="buttons-rounded">
+          <Button
+            variant="danger"
+            onClick={deleteExperience}
+            id="buttons-rounded"
+          >
             Delete
           </Button>
 
-          <Button variant="primary" onClick={handleClose} id="buttons-rounded">
+          <Button
+            variant="primary"
+            onClick={updateExperience}
+            id="buttons-rounded"
+          >
             Save Changes
           </Button>
         </Modal.Footer>
@@ -228,7 +309,7 @@ const Experiences = () => {
         <ul class="list-group">
           <li class="list-group-item border-bottom transparent">
             <div className="d-flex align-items-start">
-              <Row className="row-cols-sm-1">
+              <Row xs={1}>
                 {experiences.map((experiences, i) => (
                   <Col className="m-1 border d-flex rounded justify-content-between">
                     <div>
@@ -240,10 +321,10 @@ const Experiences = () => {
                         {experiences?.description}
                       </p>
                       <div className="d-flex" id="dates">
-                        <p className="no-p-no-m text-muted ">
+                        <p className="no-p-no-m text-muted  text-truncate">
                           {experiences?.startDate}
                         </p>
-                        <p className="no-p-no-m text-muted ">
+                        <p className="no-p-no-m text-muted text-truncate">
                           {" "}
                           {experiences?.endDate}
                         </p>
