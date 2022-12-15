@@ -24,7 +24,36 @@ import { gettingUsers } from "../redux/actions/actionType";
 import { User } from "./User";
 import Searchbar from "./Searchbar";
 export default function NavbarTop() {
+
+  useEffect(() => {
+    FetchData();
+  }, []);
+
+  const headers = {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+    },
+  };
+
+  const FetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/",
+        headers
+      );
+      if (response.ok) {
+        let data = await response.json();
+        setProfiles(data);
+        console.log(data);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const [profiles, setProfiles] = useState([]);
   const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const handleChange = (e) => {
     setQuery(e.target.value);
   };

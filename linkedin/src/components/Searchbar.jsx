@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Form, InputGroup, ListGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import NavbarTop from "./NavbarTop";
 
 function Searchbar({ user }) {
   const [data, setData] = useState([]);
@@ -98,7 +99,7 @@ function Searchbar({ user }) {
                       setQuery("");
                       setFilteredData([]);
                     }}
-                    to={"/Profile"}
+                    to={"/Profile/" + data.userId}
                   >
                     <ListGroup.Item
                       style={{
