@@ -1,4 +1,3 @@
-import { borderLeft, borderRadius } from "@mui/system";
 import React, { useState } from "react";
 import { Form, InputGroup, Row, Col, Button, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -8,7 +7,6 @@ import { BsFillCalendarDateFill } from "react-icons/bs";
 import { GoTriangleDown } from "react-icons/go";
 import { TiWorld } from "react-icons/ti";
 import { MdArticle } from "react-icons/md";
-import { blue } from "@mui/material/colors";
 import { useDispatch } from "react-redux";
 import { gettingAllPosts } from "../redux/actions/actionType";
 import { useEffect } from "react";
@@ -20,30 +18,20 @@ export default function HomeMiddle() {
   const user = useSelector((state) => state.user.user);
   const posts = useSelector((state) => state.user.posts);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   useEffect(() => {
     dispatch(gettingAllPosts());
   }, []);
-  console.log(posts);
-
-  /*
-  const submitChanges = async () => {
-    const experienceInformation = {
-      // _id: user._id,
-      role: document.querySelector("#role").value,
-      company: document.querySelector("#company").value,
-      startDate: document.querySelector("#startDate").value,
-      endDate: document.querySelector("#endDate").value,
-      description: document.querySelector("#description").value,
-      area: document.querySelector("#area").value,
+  const JokesOnYou = async () => {
+    const postInfo = {
+      text: document.querySelector("#text").value,
     };
-    console.log(experienceInformation);
+    console.log(postInfo);
+
     const options = {
       method: "POST",
-      body: JSON.stringify(experienceInformation),
+      body: JSON.stringify(postInfo),
       headers: {
         "Content-Type": "application/json",
         Authorization:
@@ -51,25 +39,20 @@ export default function HomeMiddle() {
       },
     };
     try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences`;
+      const endpoint = `https://striveschool-api.herokuapp.com/api/posts`;
       const response = await fetch(endpoint, options);
       if (response.ok) {
-        alert("User information is updated successfully");
+        alert("Posted!");
       } else {
         throw new Error("Error while uploading information");
       }
     } catch (error) {
       console.log(error);
     }
-    dispatch(gettingExpOfUsers(user._id));
+    dispatch(gettingAllPosts(posts._id));
     handleClose();
   };
-  const somefunction = (experiences) => {
-    setFuck(experiences);
-    handleShow();
-    console.log(fuck);
-  };
-  */
+
   return (
     <>
       <div
@@ -104,7 +87,7 @@ export default function HomeMiddle() {
                   </Button>
                 </div>
               </div>
-              <InputGroup type="text" className="mt-3">
+              <Form.Group type="text" className="mt-3" controlId="text">
                 <Form.Control
                   style={{
                     width: "100%",
@@ -114,7 +97,7 @@ export default function HomeMiddle() {
                   }}
                   placeholder="What do you want to talk about?"
                 />
-              </InputGroup>
+              </Form.Group>
             </div>
           </Modal.Body>
 
@@ -123,6 +106,7 @@ export default function HomeMiddle() {
               variant="primary"
               id="buttons-rounded"
               className="pt-1 pb-1"
+              onClick={JokesOnYou}
             >
               Post
             </Button>
@@ -208,7 +192,7 @@ export default function HomeMiddle() {
         </Col>
       </Row>
 
-      {posts.slice(320, 330).map((post, i) => (
+      {posts.slice(0, 10).map((post, i) => (
         <Post
           key={post.id}
           image={post?.user.image}

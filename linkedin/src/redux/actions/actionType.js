@@ -120,7 +120,7 @@ export const gettingAllPosts = () => {
 
         dispatch({
           type: GET_POSTS, //god save us all
-          payload: response_posts,
+          payload: response_posts.reverse(),
         });
       } else {
         console.log("error");
