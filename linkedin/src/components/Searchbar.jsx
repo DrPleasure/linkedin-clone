@@ -11,9 +11,8 @@ function Searchbar({ user }) {
   const [clicked, setClicked] = useState(false);
   const [query, setQuery] = useState("");
 
-  let { userId } = useParams();
-  console.log(useParams)
 
+  const params = useParams();
 
 
   useEffect(() => {
@@ -43,7 +42,7 @@ function Searchbar({ user }) {
 
   const navigate = useNavigate();
   const goToProfile = () => {
-    navigate("/");
+    navigate("/profile");
   };
 
   const fetchData = async () => {
@@ -68,6 +67,10 @@ function Searchbar({ user }) {
       console.log(error);
     }
   };
+
+const userId = params.userId
+console.log(userId)
+
   return (
     <div>
       <div className="header__search">
@@ -92,14 +95,14 @@ function Searchbar({ user }) {
         >
           {filteredData.slice(0, 10).map((data) => {
             return (
-              <ListGroup className="search-list">
+              <ListGroup key={data.id} className="search-list">
                 <div>
                   <Link
                     onClick={() => {
                       setQuery("");
                       setFilteredData([]);
                     }}
-                    to={"/Profile/" + data.userId}
+                    to={"/Profile/" + userId}
                   >
                     <ListGroup.Item
                       style={{

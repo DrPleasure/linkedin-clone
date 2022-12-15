@@ -24,10 +24,11 @@ import { getOtherProfile } from "../redux/actions/actionType";
 export const ProfileUser = () => {
     const params = useParams();
     const dispatch = useDispatch();
-    const profileDetails = useSelector((state) => state.profile.otherUser);
+    const profileDetails = useSelector((state) => state.user.otherUser);
     const userid = params.userid
     console.log("user id:", userid)
     console.log(profileDetails);
+    console.log(profileDetails._id);
     useEffect(() => {
       dispatch(getOtherProfile(userid));
     }, [userid]);

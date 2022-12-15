@@ -90,7 +90,7 @@ export default function NavbarTop() {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="mr-auto my-2 my-lg-0"
+              className="mr-auto my-2 my-lg-0 navbar-icon-top navbar"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
