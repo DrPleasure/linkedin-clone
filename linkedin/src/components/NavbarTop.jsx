@@ -24,7 +24,6 @@ import { gettingUsers } from "../redux/actions/actionType";
 import { User } from "./User";
 import Searchbar from "./Searchbar";
 export default function NavbarTop() {
-
   useEffect(() => {
     FetchData();
   }, []);
@@ -111,11 +110,11 @@ export default function NavbarTop() {
                 <FaBell /> Notifications
               </Nav.Link>
               <div className="d-flex align-items-center">
-                <a href="/profile">
+                <a href="/Profile/me">
                   <img id="avatar" src={user.image} />
                 </a>
                 <NavDropdown title="Me" id="navbarScrollingDropdown">
-                  <Link to="/profile">
+                  <Link to="/Profile/me">
                     <NavDropdown.Item href="#action3">
                       {user?.name} {user?.surname}
                     </NavDropdown.Item>
