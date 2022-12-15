@@ -197,6 +197,7 @@ export default function HomeMiddle() {
           key={post.id}
           image={post?.user.image}
           text={post.text}
+          post_id={post._id}
           username={post?.user.username}
           name={post?.user?.name}
           surname={post?.user?.surname}

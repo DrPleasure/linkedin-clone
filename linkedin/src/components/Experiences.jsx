@@ -147,7 +147,7 @@ const Experiences = () => {
                         controlId="company2"
                       >
                         <Form.Control
-                          placeholder={experiences[0]?.company}
+                          placeholder={experiences?.company}
                           defaultValue={fuck.company}
                         />
                       </Form.Group>

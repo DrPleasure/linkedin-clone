@@ -10,13 +10,73 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import { useState } from "react";
+import { gettingAllPosts } from "../redux/actions/actionType";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
-const Post = ({ id, email, name, surname, image, text, title, i }) => {
+const Post = ({ id, email, name, surname, image, text, title, i, post_id }) => {
   const [show, setShow] = useState(false);
-  const [fuck, setFuck] = useState({});
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.user.posts);
+  const updatePost = async () => {
+    const postInfo = {
+      text: document.querySelector("#text").value,
+    };
+    console.log(postInfo);
+    const options = {
+      method: "PUT",
+      body: JSON.stringify(postInfo),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/posts/${post_id}`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert("Posted!");
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    // dispatch(gettingAllPosts(posts._id));
+    handleClose();
+
+    dispatch(gettingAllPosts(posts._id));
+  };
+  //--------------------------------------------------------------------------------
+  const deletePost = async () => {
+    const options = {
+      method: "DELETE",
+      body: JSON.stringify(),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/posts/${post_id}`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert("Deleted!");
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    handleClose();
+    dispatch(gettingAllPosts(posts._id));
+  };
 
   return (
     <>
@@ -55,7 +115,6 @@ const Post = ({ id, email, name, surname, image, text, title, i }) => {
 
                 <Dropdown.Menu>
                   <Dropdown.Item onClick={handleShow}>Edit</Dropdown.Item>
-                  <Dropdown.Item>Delete</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -91,10 +150,11 @@ const Post = ({ id, email, name, surname, image, text, title, i }) => {
                       <Form.Group
                         type="text"
                         class="form-control-plaintext transparent"
-                        controlId="text2"
+                        controlId="text"
                       >
                         <Form.Control
-                        // defaultValue={fuck.company}
+                          // defaultValue={fuck.company}
+                          defaultValue={text}
                         />
                       </Form.Group>
                     </div>
@@ -105,10 +165,10 @@ const Post = ({ id, email, name, surname, image, text, title, i }) => {
           </ul>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button variant="danger" onClick={deletePost}>
+            Delete
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={updatePost}>
             Save Changes
           </Button>
         </Modal.Footer>
