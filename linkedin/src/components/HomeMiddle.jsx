@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { MdPhotoSizeSelectActual } from "react-icons/md";
 import { BsFillPlayBtnFill } from "react-icons/bs";
 import { BsFillCalendarDateFill } from "react-icons/bs";
+import { GoTriangleDown } from "react-icons/go";
+import { TiWorld } from "react-icons/ti";
 import { MdArticle } from "react-icons/md";
 import { blue } from "@mui/material/colors";
 import { useDispatch } from "react-redux";
@@ -42,21 +44,46 @@ export default function HomeMiddle() {
           </Modal.Header>
 
           <Modal.Body>
-            <div className="mt-3 ml-1">
-              <InputGroup type="text">
+            <div className="mr-2 ml-2">
+              <div className="d-flex align-items-center">
+                <img
+                  src={user.image}
+                  style={{ width: "38px", height: "38px", borderRadius: "50%" }}
+                />
+                <div className="ml-2">
+                  <p className="no-p-no-m font-weight-bold">
+                    {user.name} {user.surname}
+                  </p>
+                  <Button
+                    className="transparent text-dark btn-secondary  pr-1 pl-1 pt-0 pb-0 text-muted"
+                    id="buttons-rounded"
+                  >
+                    <TiWorld /> Anyone <GoTriangleDown />
+                  </Button>
+                </div>
+              </div>
+              <InputGroup type="text" className="mt-3">
                 <Form.Control
-                  style={{ width: "22vw", borderRadius: "15px" }}
-                  placeholder="type here to post"
+                  style={{
+                    width: "100%",
+                    borderRadius: "15px",
+                    backgroundColor: "transparent",
+                    border: "none",
+                  }}
+                  placeholder="What do you want to talk about?"
                 />
               </InputGroup>
             </div>
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button
+              variant="primary"
+              id="buttons-rounded"
+              className="pt-1 pb-1"
+            >
+              Post
             </Button>
-            <Button variant="primary">Post</Button>
           </Modal.Footer>
         </Modal>
         <div className="d-flex justify-content-center align-items-center">
@@ -78,12 +105,19 @@ export default function HomeMiddle() {
               </a>
             </div>
             <div className="mt-3 ml-1">
-              <InputGroup type="text" onClick={handleShow}>
+              {/* <InputGroup type="text" onClick={handleShow}>
                 <Form.Control
                   style={{ width: "22vw", borderRadius: "15px" }}
                   placeholder="type here to post"
                 />
-              </InputGroup>
+              </InputGroup> */}
+              <Button
+                className="transparent text-muted text-left btn-secondary"
+                style={{ width: "25vw", borderRadius: "15px" }}
+                onClick={handleShow}
+              >
+                Press here to post
+              </Button>
             </div>
           </Row>
         </div>

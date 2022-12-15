@@ -23,9 +23,6 @@ export default function Homepage() {
           </Col>
         </Row>
       </Container>
-      <div id="messenger">
-        <Messenger />
-      </div>
     </>
   );
 }
