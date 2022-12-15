@@ -2,7 +2,7 @@ import { gettingExpOfUsers } from "../redux/actions/actionType";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
-import { Modal, InputGroup, Form, Col } from "react-bootstrap";
+import { Modal, InputGroup, Form, Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -16,6 +16,7 @@ const Experiences = () => {
 
   const [show, setShow] = useState(false);
   const [add, setAdd] = useState(false);
+  const [fuck, setFuck] = useState({});
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleAdd = () => setAdd(true);
@@ -54,6 +55,11 @@ const Experiences = () => {
     dispatch(gettingExpOfUsers(user._id));
     handleClose();
   };
+  const somefunction = (experiences) => {
+    setFuck(experiences);
+    handleShow();
+    console.log(fuck);
+  };
 
   return (
     <>
@@ -79,7 +85,10 @@ const Experiences = () => {
                     </label>
                     <div class="col-sm-9">
                       <InputGroup type="text" class="form-control-plaintext">
-                        <Form.Control placeholder={experiences[0]?.company} />
+                        <Form.Control
+                          placeholder={experiences[0]?.company}
+                          defaultValue={fuck.company}
+                        />
                       </InputGroup>
                     </div>
                   </div>
@@ -93,7 +102,10 @@ const Experiences = () => {
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control placeholder={experiences[0]?.role} />
+                        <Form.Control
+                          placeholder={experiences?.role}
+                          defaultValue={fuck.role}
+                        />
                       </InputGroup>
                     </div>
                   </div>
@@ -105,11 +117,9 @@ const Experiences = () => {
                       <InputGroup
                         type="text"
                         class="form-control-plaintext"
-                        value="email@example.com"
+                        defaultValue={fuck.description}
                       >
-                        <Form.Control
-                          placeholder={experiences[0]?.description}
-                        />
+                        <Form.Control placeholder={experiences?.description} />
                       </InputGroup>
                     </div>
                   </div>
@@ -123,7 +133,7 @@ const Experiences = () => {
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control placeholder={experiences[0]?.startDate} />
+                        <Form.Control placeholder={experiences?.startDate} />
                       </InputGroup>
                     </div>
                   </div>
@@ -137,7 +147,7 @@ const Experiences = () => {
                         class="form-control-plaintext"
                         value="email@example.com"
                       >
-                        <Form.Control placeholder={experiences[0]?.updatedAt} />
+                        <Form.Control placeholder={experiences?.updatedAt} />
                       </InputGroup>
                     </div>
                   </div>
@@ -147,13 +157,10 @@ const Experiences = () => {
           </ul>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="secondary"
-            onClick={handleClose}
-            id="buttons-rounded"
-          >
-            Close
+          <Button variant="danger" onClick={handleClose} id="buttons-rounded">
+            Delete
           </Button>
+
           <Button variant="primary" onClick={handleClose} id="buttons-rounded">
             Save Changes
           </Button>
@@ -216,35 +223,42 @@ const Experiences = () => {
           <h4>Experiences</h4>
           <div>
             <AiOutlinePlus onClick={handleAdd} size={30} className="hover" />
-            <MdOutlineModeEditOutline
-              size={30}
-              onClick={handleShow}
-              className="hover"
-            />
           </div>
         </div>
         <ul class="list-group">
           <li class="list-group-item border-bottom transparent">
             <div className="d-flex align-items-start">
-              <div className="mr-2">
-                <img
-                  src="https://avatars.githubusercontent.com/u/6154722?s=280&v=4"
-                  className="mini-logos"
-                />
-              </div>
-
-              {experiences.map((experiences, i) => (
-                <Col>
-                  <div>
-                    <p className="no-p-no-m">{experiences?.company}</p>
-                    <p className="no-p-no-m text-muted">{experiences?.role}</p>
-                    <p className="no-p-no-m text-muted text-smaller">
-                      {experiences?.description}
-                    </p>
-                    <p className="no-p-no-m text-muted">Sep 2022 - Now</p>
-                  </div>
-                </Col>
-              ))}
+              <Row className="row-cols-sm-1">
+                {experiences.map((experiences, i) => (
+                  <Col className="m-1 border d-flex rounded justify-content-between">
+                    <div>
+                      <p className="no-p-no-m ">{experiences?.company}</p>
+                      <p className="no-p-no-m text-muted  w-25">
+                        {experiences?.role}
+                      </p>
+                      <p className="no-p-no-m text-muted text-smaller">
+                        {experiences?.description}
+                      </p>
+                      <div className="d-flex" id="dates">
+                        <p className="no-p-no-m text-muted ">
+                          {experiences?.startDate}
+                        </p>
+                        <p className="no-p-no-m text-muted ">
+                          {" "}
+                          {experiences?.endDate}
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <MdOutlineModeEditOutline
+                        size={30}
+                        onClick={() => somefunction(experiences)}
+                        className="hover mt-2"
+                      />
+                    </div>
+                  </Col>
+                ))}
+              </Row>
             </div>
           </li>
         </ul>

@@ -240,106 +240,106 @@ const Profile = () => {
                       <h5 className="pt-4 ">People you may know</h5>
                     </Col>
                     <Col xs={11} className="ml-2">
-                      <Row>
+                      <Row className="d-flex align-items-center">
                         <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src={users[0]?.image}
+                            src={users[50]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">{users[0]?.name}</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[50]?.name}</h6>
                           <p
                             className="smaller-text
 text-muted text-truncate"
                           >
-                            {users[0]?.bio}
+                            {users[50]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
-                      <Row>
+                      <Row className="d-flex align-items-center">
                         <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src={users[1]?.image}
+                            src={users[51]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">{users[1]?.name}</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[51]?.name}</h6>
                           <p
                             className="smaller-text
 text-muted text-truncate"
                           >
-                            {users[1]?.bio}
+                            {users[51]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
-                      <Row>
+                      <Row className="d-flex align-items-center">
                         <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src={users[2]?.image}
+                            src={users[52]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">{users[2]?.name}</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[52]?.name}</h6>
                           <p
                             className="smaller-text
 text-muted text-truncate"
                           >
-                            {users[2]?.bio}
+                            {users[52]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
-                      <Row>
+                      <Row className="d-flex align-items-center">
                         <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src={users[3]?.image}
+                            src={users[56]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">{users[3]?.name}</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[56]?.name}</h6>
                           <p
                             className="smaller-text text-truncate
 text-muted"
                           >
-                            {users[3]?.bio}
+                            {users[56]?.bio}
                           </p>
                         </Col>
                       </Row>
                     </Col>
                     <Col xs={11} className="ml-2 border-top">
-                      <Row>
+                      <Row className="d-flex align-items-center">
                         <Col xs={2} className="mr-3">
                           <img
                             className=" mt-3 rounded-img"
                             style={{ width: "3rem" }}
-                            src={users[4]?.image}
+                            src={users[59]?.image}
                             alt="..."
                           />
                         </Col>
                         <Col xs={8}>
-                          <h6 className="pt-4 no-p-no-m ">{users[4]?.name}</h6>
+                          <h6 className="pt-4 no-p-no-m ">{users[59]?.name}</h6>
                           <p
                             className="smaller-text text-truncate
 text-muted"
                           >
-                            {users[4]?.bio}
+                            {users[59]?.bio}
                           </p>
                         </Col>
                       </Row>

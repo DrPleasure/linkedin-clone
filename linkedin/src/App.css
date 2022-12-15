@@ -143,3 +143,6 @@
   border-radius: 50%;
   max-height: 30px;
 }
+#dates {
+  max-width: 5rem;
+}

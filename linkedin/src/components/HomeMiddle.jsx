@@ -28,6 +28,48 @@ export default function HomeMiddle() {
     dispatch(gettingAllPosts());
   }, []);
   console.log(posts);
+
+  /*
+  const submitChanges = async () => {
+    const experienceInformation = {
+      // _id: user._id,
+      role: document.querySelector("#role").value,
+      company: document.querySelector("#company").value,
+      startDate: document.querySelector("#startDate").value,
+      endDate: document.querySelector("#endDate").value,
+      description: document.querySelector("#description").value,
+      area: document.querySelector("#area").value,
+    };
+    console.log(experienceInformation);
+    const options = {
+      method: "POST",
+      body: JSON.stringify(experienceInformation),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert("User information is updated successfully");
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    dispatch(gettingExpOfUsers(user._id));
+    handleClose();
+  };
+  const somefunction = (experiences) => {
+    setFuck(experiences);
+    handleShow();
+    console.log(fuck);
+  };
+  */
   return (
     <>
       <div
