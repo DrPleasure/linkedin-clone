@@ -51,9 +51,8 @@ const Profile = () => {
                         alt="forest"
                       />
                       <div>
-
                         <img
-                          src={user?.image}
+                          src="https://media.tenor.com/95dTfeEQlwIAAAAC/anime-autistic.gif"
                           style={{
                             width: "180px",
                             height: "180px",
@@ -62,7 +61,6 @@ const Profile = () => {
                           }}
                           className="super-rounded bottom-left"
                           alt="blankprofile"
-                          
                         />
                       </div>
                       <div>

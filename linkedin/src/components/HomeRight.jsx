@@ -39,7 +39,7 @@ export default function HomeRight() {
               />
             </Col>
             <Col xs={8}>
-              <h6 className="pt-4 no-p-no-m ">{users[5]?.name}</h6>
+              <h6 className="pt-3 no-p-no-m ">{users[5]?.name}</h6>
               <p
                 className="smaller-text
 text-muted text-truncate no-p-no-m mb-1"
@@ -70,7 +70,7 @@ text-muted text-truncate no-p-no-m mb-1"
               />
             </Col>
             <Col xs={8}>
-              <h6 className="pt-4 no-p-no-m ">{users[6]?.name}</h6>
+              <h6 className="pt-3 no-p-no-m ">{users[6]?.name}</h6>
               <p
                 className="smaller-text
 text-muted text-truncate no-p-no-m mb-1"
@@ -101,7 +101,7 @@ text-muted text-truncate no-p-no-m mb-1"
               />
             </Col>
             <Col xs={8}>
-              <h6 className="pt-4 no-p-no-m ">{users[7]?.name}</h6>
+              <h6 className="pt-3 no-p-no-m ">{users[7]?.name}</h6>
               <p
                 className="smaller-text
 text-muted text-truncate no-p-no-m mb-1"
