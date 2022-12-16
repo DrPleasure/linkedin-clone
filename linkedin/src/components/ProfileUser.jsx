@@ -17,9 +17,9 @@ import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Experiences from "./Experiences"; //component
 import { useParams } from "react-router-dom";
 import { getOtherProfile } from "../redux/actions/actionType";
+import ExperiencesUser from "./ExperiencesUser";
 
 export const ProfileUser = () => {
     const params = useParams();
@@ -161,7 +161,7 @@ export const ProfileUser = () => {
                     <h4>About</h4>
                     <p className="text-truncate">{profileDetails.bio}</p>
                   </div>
-                  <Experiences />
+                  <ExperiencesUser />
 
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>Education</h4>

@@ -39,26 +39,25 @@ export const getOtherProfile = (userid) => {
   };
 };
 
-export const getExperienceOtherAction = (userid) => {
-  return async (dispatch, getState) => {
+export const getUserXp = (userid) => {
+  return async (dispatch) => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/" +
-          userid +
-          "/experiences/",
+        "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences",
         options
       );
       if (response.ok) {
-        let fetchedData = await response.json();
+        const fetchedData = await response.json();
+        console.log(fetchedData);
         dispatch({
           type: GET_EXPERIENCE_DETAILS_OTHER,
           payload: fetchedData,
         });
       } else {
-        console.log("error fetching experiences");
+        console.log("error");
       }
     } catch (error) {
-      console.log(error);
+      console.log("woops nothing here");
     }
   };
 };

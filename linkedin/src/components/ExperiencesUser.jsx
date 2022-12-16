@@ -1,4 +1,4 @@
-import { gettingExpOfUsers, getExperienceOtherAction } from "../redux/actions/actionType";
+import { gettingExpOfUsers, getExperienceOtherAction, getUserXp } from "../redux/actions/actionType";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
@@ -7,7 +7,7 @@ import { useState } from "react";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useSearchParams } from "react-router-dom"
-const Experiences = () => {
+const ExperiencesUser = () => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const experiences = useSelector((state) => state.user.experiences);
@@ -15,8 +15,20 @@ const Experiences = () => {
     dispatch(gettingExpOfUsers());
   }, []);
 
- console.log(user)
+  const experiencesforuser = useSelector((state) => state.user.experiences);
+  useEffect(() => {
+    dispatch(getUserXp());
+  }, []);
 
+  const profileDetails = useSelector((state) => state.user.otherUser);
+  console.log(profileDetails);
+
+
+const expid = user._id
+console.log(expid)
+  
+console.log(experiences)
+console.log(getUserXp)
 
   const [show, setShow] = useState(false);
   const [add, setAdd] = useState(false);
@@ -25,102 +37,16 @@ const Experiences = () => {
   const handleShow = () => setShow(true);
   const handleAdd = () => setAdd(true);
   const handleNoAdd = () => setAdd(false);
-  const submitChanges = async () => {
-    const experienceInformation = {
-      // _id: user._id,
-      role: document.querySelector("#role").value,
-      company: document.querySelector("#company").value,
-      startDate: document.querySelector("#startDate").value,
-      endDate: document.querySelector("#endDate").value,
-      description: document.querySelector("#description").value,
-      area: document.querySelector("#area").value,
-    };
-    console.log(experienceInformation);
-    const options = {
-      method: "POST",
-      body: JSON.stringify(experienceInformation),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
-      },
-    };
-    try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences`;
-      const response = await fetch(endpoint, options);
-      if (response.ok) {
-        alert("User information is updated successfully");
-      } else {
-        throw new Error("Error while uploading information");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    dispatch(gettingExpOfUsers(user._id));
-    handleClose();
-  };
+ 
   const somefunction = (experiences) => {
     setFuck(experiences);
     handleShow();
     console.log(fuck);
   };
   //--------------------------------------------------------------------------------------------------------------------------------------------------------
-  const deleteExperience = async () => {
-    const options = {
-      method: "DELETE",
-      body: JSON.stringify(),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
-      },
-    };
-    try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences/${fuck._id}`;
-      const response = await fetch(endpoint, options);
-      if (response.ok) {
-        alert("Exp deleted successfully, you fuck");
-      } else {
-        throw new Error("Error while uploading information");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    dispatch(gettingExpOfUsers(user._id));
-  };
+
   //--------------------------------------------------------------------------------------------------------------------------------------------------------
-  const updateExperience = async () => {
-    const experienceInformation2 = {
-      // _id: user._id,
-      role: document.querySelector("#role2").value,
-      company: document.querySelector("#company2").value,
-      startDate: document.querySelector("#startDate2").value,
-      endDate: document.querySelector("#endDate2").value,
-      description: document.querySelector("#description2").value,
-    };
-    console.log(experienceInformation2);
-    const options = {
-      method: "PUT",
-      body: JSON.stringify(experienceInformation2),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk4NDBhOTQwNWJkYTAwMTUwOTE4NDIiLCJpYXQiOjE2NzA5MjI0MTAsImV4cCI6MTY3MjEzMjAxMH0.kjWibFQVg-vQH3I0TIVSx-LtiW0RzfnZtZHc033cLR0",
-      },
-    };
-    try {
-      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/639840a9405bda0015091842/experiences/${fuck._id}`;
-      const response = await fetch(endpoint, options);
-      if (response.ok) {
-        alert("Exp edited successfully, you cock");
-      } else {
-        throw new Error("Error while uploading information");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    dispatch(gettingExpOfUsers(user._id));
-  };
+  
   //------------------
   return (
     <>
@@ -234,21 +160,9 @@ const Experiences = () => {
           </ul>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="danger"
-            onClick={deleteExperience}
-            id="buttons-rounded"
-          >
-            Delete
-          </Button>
+      
 
-          <Button
-            variant="primary"
-            onClick={updateExperience}
-            id="buttons-rounded"
-          >
-            Save Changes
-          </Button>
+         
         </Modal.Footer>
       </Modal>
       {/* 2nd Modal */}
@@ -297,7 +211,7 @@ const Experiences = () => {
           <Button variant="secondary" onClick={handleNoAdd}>
             Close
           </Button>
-          <Button variant="primary" type="submit" onClick={submitChanges}>
+          <Button variant="primary" type="submit">
             Save Changes
           </Button>
         </Modal.Footer>
@@ -354,4 +268,4 @@ const Experiences = () => {
     </>
   );
 };
-export default Experiences;
+export default ExperiencesUser;
