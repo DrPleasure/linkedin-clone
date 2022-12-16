@@ -194,7 +194,7 @@ const Experiences = () => {
                     </label>
                     <div class="col-sm-9">
                       <InputGroup
-                        type="text"
+                        type="date"
                         class="form-control-plaintext"
                         value="email@example.com"
                         id="startDate2"
@@ -212,7 +212,7 @@ const Experiences = () => {
                     </label>
                     <div class="col-sm-9">
                       <InputGroup
-                        type="text"
+                        type="date"
                         class="form-control-plaintext"
                         value="email@example.com"
                         id="endDate2"
@@ -252,25 +252,24 @@ const Experiences = () => {
 
       <Modal show={add} onHide={handleNoAdd}>
         <Modal.Header>
-          <Modal.Title>Add Personal Experience</Modal.Title>
+          <Modal.Title>New Experience: </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p id="required">* Required field</p>
           <Form>
             <Form.Group controlId="role">
-              <Form.Label>Role*</Form.Label>
+              <Form.Label>Role</Form.Label>
               <Form.Control type="text" placeholder="Enter Role" />
             </Form.Group>
             <Form.Group controlId="company">
-              <Form.Label>Company*</Form.Label>
+              <Form.Label>Company</Form.Label>
               <Form.Control type="text" placeholder="Enter Company Name" />
             </Form.Group>
             <Form.Group controlId="area">
-              <Form.Label>Area*</Form.Label>
+              <Form.Label>Area</Form.Label>
               <Form.Control type="text" placeholder="Enter City of Work" />
             </Form.Group>
             <Form.Group controlId="startDate">
-              <Form.Label>Start Date*</Form.Label>
+              <Form.Label>Start Date</Form.Label>
               <Form.Control type="date" placeholder="Enter your new position" />
             </Form.Group>
             <Form.Group controlId="endDate">
@@ -281,7 +280,7 @@ const Experiences = () => {
               />
             </Form.Group>
             <Form.Group controlId="description">
-              <Form.Label>Description*</Form.Label>
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter your Job Experience"
@@ -311,9 +310,12 @@ const Experiences = () => {
             <div className="d-flex align-items-start">
               <Row xs={1}>
                 {experiences.map((experiences, i) => (
-                  <Col className="m-1 border d-flex rounded justify-content-between">
+                  <Col
+                    className="m-1 mt-2 border d-flex rounded justify-content-between "
+                    style={{ width: "30vw" }}
+                  >
                     <div>
-                      <p className="no-p-no-m ">{experiences?.company}</p>
+                      <h4 className="no-p-no-m ">{experiences?.company}</h4>
                       <p className="no-p-no-m text-muted  w-25">
                         {experiences?.role}
                       </p>
