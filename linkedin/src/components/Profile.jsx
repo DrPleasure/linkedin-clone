@@ -12,12 +12,13 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { MdPeopleAlt } from "react-icons/md";
-import { FiEdit2 } from "react-icons/fi";
+import { FiEdit2, FiUpload } from "react-icons/fi";
 import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Experiences from "./Experiences"; //component
+import Form from "./Form";
 
 const Profile = () => {
   //harem
@@ -50,6 +51,7 @@ const Profile = () => {
                         alt="forest"
                       />
                       <div>
+
                         <img
                           src={user?.image}
                           style={{
@@ -60,6 +62,7 @@ const Profile = () => {
                           }}
                           className="super-rounded bottom-left"
                           alt="blankprofile"
+                          
                         />
                       </div>
                       <div>

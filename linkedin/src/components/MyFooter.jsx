@@ -5,7 +5,11 @@ import { BsGearFill } from "react-icons/bs";
 export default class MyFooter extends Component {
   render() {
     return (
-      <Container id="footing" className="smaller mt-5">
+      <Container
+        id="footing"
+        className="smaller mt-5"
+        style={{ fontSize: "13  px" }}
+      >
         {/* Footer */}
         <footer className="page-footer font-small indigo">
           {/* Footer Links */}
@@ -116,17 +120,17 @@ export default class MyFooter extends Component {
                 <ul className="list-unstyled">
                   <li>
                     <a href="#!" className="text-secondary">
-                      <h5>
+                      <h6>
                         <AiFillQuestionCircle /> Questions?
-                      </h5>
+                      </h6>
                     </a>
-                    <p className="ml-2 text-secondary">Visit our Help Center</p>
+                    <p className=" text-secondary">Visit our Help Center</p>
                   </li>
                   <li>
                     <a href="#!" className="text-secondary">
-                      <h5>
+                      <h6>
                         <BsGearFill /> Manage your account in privacy
-                      </h5>
+                      </h6>
                     </a>
                     <p className="text-secondary">Go to your Settings</p>
                   </li>
@@ -142,7 +146,12 @@ export default class MyFooter extends Component {
                     <label for="cars" className="text-secondary">
                       Select Language
                     </label>
-                    <select style={{ width: "18rem" }} name="cars" id="cars">
+                    <select
+                      style={{ width: "18rem" }}
+                      class="form-control"
+                      name="cars"
+                      id="cars"
+                    >
                       <option value="eng">English(English)</option>
                       <option value="eng">English(English)</option>
                       <option value="eng">English(English)</option>

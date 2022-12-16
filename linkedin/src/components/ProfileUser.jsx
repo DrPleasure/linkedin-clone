@@ -17,25 +17,28 @@ import { IoMdStats } from "react-icons/io";
 import Skillimage from "./Skillimage";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Experiences from "./Experiences"; //component
 import { useParams } from "react-router-dom";
 import { getOtherProfile } from "../redux/actions/actionType";
+import ExperiencesUser from "./ExperiencesUser";
 
 export const ProfileUser = () => {
     const params = useParams();
     const dispatch = useDispatch();
-    const profileDetails = useSelector((state) => state.profile.otherUser);
+    const profileDetails = useSelector((state) => state.user.otherUser);
     const userid = params.userid
     console.log("user id:", userid)
     console.log(profileDetails);
-    useEffect(() => {
-      dispatch(getOtherProfile(userid));
-    }, [userid]);
+    console.log(profileDetails._id);
+   
 
     const users = useSelector((state) => state.user.users);
   useEffect(() => {
     dispatch(gettingAllUsers());
   }, []);
+
+  useEffect(() => {
+    dispatch(getOtherProfile(userid));
+  }, [userid]);
 
   return (
     <>
@@ -158,7 +161,7 @@ export const ProfileUser = () => {
                     <h4>About</h4>
                     <p className="text-truncate">{profileDetails.bio}</p>
                   </div>
-                  <Experiences />
+                  <ExperiencesUser />
 
                   <div className="bg-light mt-3 rounded p-3">
                     <h4>Education</h4>

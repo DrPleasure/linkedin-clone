@@ -13,6 +13,10 @@ import { useState } from "react";
 import { gettingAllPosts } from "../redux/actions/actionType";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { GrLike } from "react-icons/gr";
+import { CgComment } from "react-icons/cg";
+import { FiSend } from "react-icons/fi";
+import { BiRepost } from "react-icons/bi";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 const Post = ({ id, email, name, surname, image, text, title, i, post_id }) => {
@@ -81,8 +85,8 @@ const Post = ({ id, email, name, surname, image, text, title, i, post_id }) => {
   return (
     <>
       <div className="bg-light rounded mt-2 p-2">
-        <Row>
-          <Col xs={10} className="d-flex">
+        <Row className="d-flex justify-content-between ml-1 mr-1">
+          <div className="d-flex">
             <img
               src={image}
               style={{
@@ -102,8 +106,8 @@ const Post = ({ id, email, name, surname, image, text, title, i, post_id }) => {
                 <p className="text-smaller"> {title}</p>
               </div>
             </div>
-          </Col>
-          <Col xs={1}>
+          </div>
+          <div>
             <div>
               <Dropdown>
                 <Dropdown.Toggle
@@ -118,7 +122,7 @@ const Post = ({ id, email, name, surname, image, text, title, i, post_id }) => {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-          </Col>
+          </div>
         </Row>
 
         <Row>
@@ -130,6 +134,45 @@ const Post = ({ id, email, name, surname, image, text, title, i, post_id }) => {
           <Col xs={12}>
             <img src={"https://picsum.photos/200" + i} className="w-100" />
           </Col>
+        </Row>
+        <Row className="d-flex justify-content-between mr-2 ml-2">
+          <div>
+            <button
+              type="button"
+              className="btn btn-light text-dark mt-1 d-flex align-items-center justify-content-center"
+            >
+              <GrLike className="mr-2" />
+              Like
+            </button>
+          </div>
+
+          <div>
+            <button
+              type="button"
+              className="btn btn-light text-dark mt-1 d-flex align-items-center justify-content-center"
+            >
+              <CgComment className="mr-2" />
+              Comment
+            </button>
+          </div>
+          <div>
+            <button
+              type="button"
+              className="btn btn-light text-dark mt-1 d-flex align-items-center justify-content-center"
+            >
+              <BiRepost className="mr-2" />
+              Repost
+            </button>
+          </div>
+          <div>
+            <button
+              type="button"
+              className="btn btn-light text-dark mt-1 d-flex align-items-center justify-content-center"
+            >
+              <FiSend className="mr-2" />
+              Send
+            </button>
+          </div>
         </Row>
       </div>
 

@@ -11,7 +11,9 @@ const INITIAL_STATE = {
   users: [],
   experiences: [],
   posts: [],
-  otherUser: [],
+  otherUser:{
+    _id:""
+  },
   otherExperience: []
 };
 const userReducer = (state = INITIAL_STATE, action) => {

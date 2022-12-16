@@ -4,6 +4,7 @@ import { Form, InputGroup, ListGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import NavbarTop from "./NavbarTop";
+import { getOtherProfile } from "../redux/actions/actionType";
 
 function Searchbar({ user }) {
   const [data, setData] = useState([]);
@@ -11,11 +12,12 @@ function Searchbar({ user }) {
   const [clicked, setClicked] = useState(false);
   const [query, setQuery] = useState("");
 
-  let { userId } = useParams();
-  console.log(useParams)
+
+  const params = useParams();
 
 
 
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -36,14 +38,14 @@ function Searchbar({ user }) {
     }
   };
 
-  const onInputClick = (wasItClicked) => {
-    console.log(clicked);
-    setClicked(wasItClicked);
+  const onInputClick = () => {
+    console.log(user.id);
+    
   };
 
   const navigate = useNavigate();
   const goToProfile = () => {
-    navigate("/");
+    navigate("/profile/" + {userid});
   };
 
   const fetchData = async () => {
@@ -59,6 +61,7 @@ function Searchbar({ user }) {
 
       if (response.ok) {
         const data = await response.json();
+        
 
         setData(data);
       } else {
@@ -68,11 +71,17 @@ function Searchbar({ user }) {
       console.log(error);
     }
   };
+
+
+  console.log(data)
+  const userid = params.userid
+  console.log("user id:", userid)
+
   return (
     <div>
       <div className="header__search">
         <InputGroup
-          onClick={() => onInputClick(false)}
+          onClick={() => onInputClick()}
           type="text"
           value={query}
           onChange={(e) => {
@@ -92,14 +101,14 @@ function Searchbar({ user }) {
         >
           {filteredData.slice(0, 10).map((data) => {
             return (
-              <ListGroup className="search-list">
+              <ListGroup key={data.id} className="search-list">
                 <div>
                   <Link
-                    onClick={() => {
+                    onClick={(getOtherProfile) => {
                       setQuery("");
                       setFilteredData([]);
                     }}
-                    to={"/Profile/" + data.userId}
+                    to={"/Profile/" + data._id}
                   >
                     <ListGroup.Item
                       style={{

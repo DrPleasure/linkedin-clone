@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/Profile/me" element={<ProfilePage />} />
-          <Route path="/Profile/user" element={<ProfileViewUser />} />
+          <Route path="/Profile/:userid" element={<ProfileViewUser />} />
           <Route path="/Form" element={<Form />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
