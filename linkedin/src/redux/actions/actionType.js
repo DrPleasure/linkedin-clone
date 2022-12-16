@@ -41,12 +41,14 @@ export const getOtherProfile = (userid) => {
 
 export const getUserXp = (userid) => {
   return async (dispatch) => {
+    
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences",
+        "https://striveschool-api.herokuapp.com/api/profile/" + userid + "/experiences",
         options
       );
       if (response.ok) {
+        console.log("helloes")
         const fetchedData = await response.json();
         console.log(fetchedData);
         dispatch({

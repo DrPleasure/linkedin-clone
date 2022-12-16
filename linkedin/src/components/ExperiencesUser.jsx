@@ -10,15 +10,22 @@ import { useSearchParams } from "react-router-dom"
 const ExperiencesUser = () => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
-  const experiences = useSelector((state) => state.user.experiences);
-  useEffect(() => {
-    dispatch(gettingExpOfUsers());
-  }, []);
+  const experiences = useSelector((state) => state.user.otherExperience);
+  
+  console.log(experiences)
 
-  const experiencesforuser = useSelector((state) => state.user.experiences);
+  const currentOtherUserId = useSelector((state) => state.user.otherUser._id);
   useEffect(() => {
-    dispatch(getUserXp());
-  }, []);
+    if(currentOtherUserId) {  dispatch(getUserXp(currentOtherUserId))}
+  
+  }, [currentOtherUserId]);
+  console.log(currentOtherUserId)
+
+
+
+  const experiencesforuser = useSelector((state) => state.user.otherUser);
+  
+  console.log(experiencesforuser)
 
   const profileDetails = useSelector((state) => state.user.otherUser);
   console.log(profileDetails);
@@ -27,8 +34,8 @@ const ExperiencesUser = () => {
 const expid = user._id
 console.log(expid)
   
-console.log(experiences)
-console.log(getUserXp)
+
+
 
   const [show, setShow] = useState(false);
   const [add, setAdd] = useState(false);
