@@ -4,6 +4,7 @@ import { Form, InputGroup, ListGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import NavbarTop from "./NavbarTop";
+import { getOtherProfile } from "../redux/actions/actionType";
 
 function Searchbar({ user }) {
   const [data, setData] = useState([]);
@@ -15,6 +16,8 @@ function Searchbar({ user }) {
   const params = useParams();
 
 
+
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,14 +38,14 @@ function Searchbar({ user }) {
     }
   };
 
-  const onInputClick = (wasItClicked) => {
-    console.log(clicked);
-    setClicked(wasItClicked);
+  const onInputClick = () => {
+    console.log(user.id);
+    
   };
 
   const navigate = useNavigate();
   const goToProfile = () => {
-    navigate("/profile");
+    navigate("/profile/" + {userid});
   };
 
   const fetchData = async () => {
@@ -58,6 +61,7 @@ function Searchbar({ user }) {
 
       if (response.ok) {
         const data = await response.json();
+        
 
         setData(data);
       } else {
@@ -68,14 +72,16 @@ function Searchbar({ user }) {
     }
   };
 
-const userId = params.userId
-console.log(userId)
+
+  console.log(data)
+  const userid = params.userid
+  console.log("user id:", userid)
 
   return (
     <div>
       <div className="header__search">
         <InputGroup
-          onClick={() => onInputClick(false)}
+          onClick={() => onInputClick()}
           type="text"
           value={query}
           onChange={(e) => {
@@ -98,11 +104,11 @@ console.log(userId)
               <ListGroup key={data.id} className="search-list">
                 <div>
                   <Link
-                    onClick={() => {
+                    onClick={(getOtherProfile) => {
                       setQuery("");
                       setFilteredData([]);
                     }}
-                    to={"/Profile/" + userId}
+                    to={"/Profile/" + data._id}
                   >
                     <ListGroup.Item
                       style={{
