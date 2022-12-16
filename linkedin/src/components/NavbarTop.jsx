@@ -75,7 +75,6 @@ export default function NavbarTop() {
         <Navbar id="NavbarTop" expand="lg">
           <Navbar.Brand href="#">
             <Link to="/">
-              {" "}
               <img
                 src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                 alt="logo"
@@ -84,8 +83,9 @@ export default function NavbarTop() {
               ></img>{" "}
             </Link>
           </Navbar.Brand>
-
-          <Searchbar />
+          <div style={{ marginRight: "7.5rem" }}>
+            <Searchbar />
+          </div>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -94,50 +94,86 @@ export default function NavbarTop() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link>
-                <FaHome /> Home
+              <Nav.Link className="text-center">
+                <div>
+                  <FaHome />
+                </div>
+                Home
               </Nav.Link>
-              <Nav.Link>
-                <FaPeopleArrows /> My Network
+              <Nav.Link className="text-center">
+                <div>
+                  <FaPeopleArrows />
+                </div>
+                My Network
               </Nav.Link>
-              <Nav.Link>
-                <FaBriefcase /> Jobs
+              <Nav.Link className="text-center">
+                <div>
+                  <FaBriefcase />{" "}
+                </div>
+                Jobs
               </Nav.Link>
-              <Nav.Link>
-                <FaRocketchat /> Messaging
+              <Nav.Link className="text-center">
+                <div>
+                  {" "}
+                  <FaRocketchat />
+                </div>{" "}
+                Messaging
               </Nav.Link>
-              <Nav.Link>
-                <FaBell /> Notifications
+              <Nav.Link className="text-center">
+                <div>
+                  {" "}
+                  <FaBell />
+                </div>{" "}
+                Notifications
               </Nav.Link>
-              <div className="d-flex align-items-center">
-                <a href="/Profile/me">
-                  <img id="avatar" src={user.image} />
-                </a>
-                <NavDropdown title="Me" id="navbarScrollingDropdown">
-                  <Link to="/Profile/me">
-                    <NavDropdown.Item href="#action3">
-                      {user?.name} {user?.surname}
-                    </NavDropdown.Item>
-                  </Link>
-                  <NavDropdown.Item href="#action4">
-                    Description
-                  </NavDropdown.Item>
+              <div className="d-flex align-items-center mb-4 mr-2 ml-1">
+                <div>
+                  <div className="text-center">
+                    <a href="/Profile/me">
+                      <img id="avatar" src={user.image} />
+                    </a>
+                  </div>
+                  <div>
+                    <NavDropdown
+                      title="Me"
+                      id="navbarScrollingDropdown"
+                      style={{
+                        height: "1rem",
+                        margin: "-0.3rem",
+                      }}
+                    >
+                      <Link to="/Profile/me">
+                        <NavDropdown.Item href="#action3">
+                          {user?.name} {user?.surname}
+                        </NavDropdown.Item>
+                      </Link>
+                      <NavDropdown.Item href="#action4">
+                        Description
+                      </NavDropdown.Item>
 
-                  <NavDropdown.Item>View Profile</NavDropdown.Item>
+                      <NavDropdown.Item>View Profile</NavDropdown.Item>
 
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">Account</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">
-                    Settings & Privacy
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">Manage</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">
-                    Posts & Activity
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">Sign out</NavDropdown.Item>
-                </NavDropdown>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action5">
+                        Account
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="#action5">
+                        Settings & Privacy
+                      </NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action5">
+                        Manage
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="#action5">
+                        Posts & Activity
+                      </NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action5">
+                        Sign out
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </div>
+                </div>
               </div>
               <Divider orientation="vertical" flexItem />
               <NavDropdown title="Work" href="#action5">
