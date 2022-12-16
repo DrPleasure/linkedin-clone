@@ -300,7 +300,7 @@ const Experiences = () => {
 
       <div className="bg-light mt-3 rounded p-3">
         <div className="d-flex justify-content-between">
-          <h4>Experiences</h4>
+          <h3>Experiences</h3>
           <div>
             <AiOutlinePlus onClick={handleAdd} size={30} className="hover" />
           </div>
@@ -315,13 +315,13 @@ const Experiences = () => {
                     style={{ width: "30vw" }}
                   >
                     <div>
-                      <h4 className="no-p-no-m ">{experiences?.company}</h4>
-                      <p className="no-p-no-m text-muted  w-25">
+                      <h4 className="no-p-no-m my-1 ">
+                        {experiences?.company}
+                      </h4>
+                      <p className="no-p-no-m   my-1 text-muted">
                         {experiences?.role}
                       </p>
-                      <p className="no-p-no-m text-muted text-smaller">
-                        {experiences?.description}
-                      </p>
+
                       <div className="d-flex" id="dates">
                         <p className="no-p-no-m text-muted  text-truncate">
                           {experiences?.startDate}
@@ -331,6 +331,9 @@ const Experiences = () => {
                           {experiences?.endDate}
                         </p>
                       </div>
+                      <p className="no-p-no-m my-2  text-smaller">
+                        {experiences?.description}
+                      </p>
                     </div>
                     <div>
                       <MdOutlineModeEditOutline
