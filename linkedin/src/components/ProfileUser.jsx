@@ -29,14 +29,16 @@ export const ProfileUser = () => {
     console.log("user id:", userid)
     console.log(profileDetails);
     console.log(profileDetails._id);
-    useEffect(() => {
-      dispatch(getOtherProfile(userid));
-    }, [userid]);
+   
 
     const users = useSelector((state) => state.user.users);
   useEffect(() => {
     dispatch(gettingAllUsers());
   }, []);
+
+  useEffect(() => {
+    dispatch(getOtherProfile(userid));
+  }, [userid]);
 
   return (
     <>
