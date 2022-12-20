@@ -8,6 +8,4 @@ Our team:
 <p align="center">
 Progress by far:
 </p>
-<div align="center">
-<img src="https://i.imgur.com/h9DfFxy.png"/>
-</div>
+
